@@ -1,0 +1,11 @@
+{
+  "label": "Prácticas",
+  "position": 2,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "slug": "/practicas",
+    "title": "Prácticas de Python para Química",
+    "description": "Ocho prácticas, desde los primeros pasos en Google Colab hasta un cálculo de química cuántica. El código se trabaja en Colab; cada página de este sitio trae la teoría de la práctica, los errores más frecuentes, retos para después de clase y lecturas para profundizar."
+  }
+}

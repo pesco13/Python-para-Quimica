@@ -10,7 +10,7 @@ const REPO = 'QI452-Python-Quimica';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Python para Química',
-  tagline: 'Química Industrial · UTP',
+  tagline: 'Química · UTP',
   favicon: 'img/logo.svg',
 
   future: {
@@ -34,14 +34,6 @@ const config = {
     defaultLocale: 'es',
     locales: ['es'],
   },
-
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
-      type: 'text/css',
-      crossorigin: 'anonymous',
-    },
-  ],
 
   presets: [
     [
@@ -101,7 +93,7 @@ const config = {
             title: 'Curso',
             items: [
               {label: 'Inicio', to: '/'},
-              {label: 'Hands-on', to: '/category/hands-on'},
+              {label: 'Prácticas', to: '/practicas'},
             ],
           },
           {

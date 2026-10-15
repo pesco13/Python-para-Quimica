@@ -23,11 +23,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Convertir notebooks en páginas
-        run: python scripts/notebooks_a_paginas.py
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3

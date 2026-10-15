@@ -1,8 +1,8 @@
 # Python para Química
 
-Notebooks introductorios de Python aplicado a la química para el programa de Química Industrial de la Universidad Tecnológica de Pereira (UTP).
+Notebooks introductorios de Python aplicado a la química para el programa de Química de la Universidad Tecnológica de Pereira (UTP).
 
-🌐 **Sitio web:** https://pesco13.github.io/QI452-Python-Quimica/
+Sitio web con la teoría, los errores comunes y retos de cada práctica: https://pesco13.github.io/QI452-Python-Quimica/
 
 Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de Google. No hay que instalar nada en el computador.
 
@@ -52,4 +52,4 @@ MIT (ver `LICENSE`).
 
 ## Sitio web
 
-El sitio se genera con [Docusaurus](https://docusaurus.io) a partir de los notebooks de `notebooks/` y se publica automáticamente en GitHub Pages cada vez que se sube un cambio a la rama `main`. Para agregar o editar una práctica basta con modificar el notebook: `scripts/notebooks_a_paginas.py` crea la página correspondiente.
+El sitio está hecho con [Docusaurus](https://docusaurus.io) y se publica solo en GitHub Pages cada vez que se sube un cambio a la rama `main`. Sus páginas están en `docs/practicas/`, una por notebook, escritas en Markdown. Para cambiar el texto de una práctica, edite el archivo `.md` correspondiente.

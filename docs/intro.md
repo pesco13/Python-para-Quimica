@@ -6,38 +6,39 @@ sidebar_position: 1
 
 # Python para Química
 
-Notebooks introductorios de Python aplicado a la química para el programa de Química Industrial de la Universidad Tecnológica de Pereira (UTP).
+Ocho prácticas introductorias de Python aplicado a la química, para el programa de Química de la Universidad Tecnológica de Pereira (UTP).
 
-Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de Google. No hay que instalar nada en el computador.
+El código de cada práctica se trabaja en Google Colab, así que solo se necesita un navegador y una cuenta de Google; no hay que instalar nada en el computador. Este sitio acompaña a los notebooks. En cada práctica encontrará la teoría que hay detrás del código, los errores más frecuentes y cómo resolverlos, retos para después de clase, un glosario y lecturas para profundizar.
 
 ## Contenido
 
-| N.º | Notebook | Tema |
+| N.º | Práctica | Tema |
 |---|---|---|
-| 00 | [Bienvenida a Colab](./hands-on/00-bienvenida-a-colab.mdx) | Notebooks, celdas e instalación de bibliotecas |
-| 01 | [Python básico para química](./hands-on/01-python-basico-para-quimica.mdx) | Variables, listas, diccionarios, funciones |
-| 02 | [Tablas con pandas](./hands-on/02-tablas-con-pandas.mdx) | Leer, filtrar, agrupar y graficar datos |
-| 03 | [Moléculas con RDKit](./hands-on/03-moleculas-con-rdkit.mdx) | SMILES, descriptores, regla de Lipinski |
-| 04 | [PubChem desde Python](./hands-on/04-pubchem-desde-python.mdx) | Consultar una base de datos química por API |
-| 05 | [Similitud y espacio químico](./hands-on/05-similitud-y-espacio-quimico.mdx) | Huellas moleculares, Tanimoto, PCA |
-| 06 | [Estructuras 3D y conformeros](./hands-on/06-estructuras-3d-y-conformeros.mdx) | Geometrías 3D y campo de fuerza MMFF94 |
-| 07 | [Primer cálculo cuántico con PySCF](./hands-on/07-primer-calculo-cuantico-pyscf.mdx) | Hartree–Fock, DFT, HOMO/LUMO |
+| 00 | [Bienvenida a Colab](./practicas/00-bienvenida-a-colab.md) | Notebooks, celdas e instalación de bibliotecas |
+| 01 | [Python básico para química](./practicas/01-python-basico-para-quimica.md) | Variables, listas, diccionarios, funciones |
+| 02 | [Tablas con pandas](./practicas/02-tablas-con-pandas.md) | Leer, filtrar, agrupar y graficar datos |
+| 03 | [Moléculas con RDKit](./practicas/03-moleculas-con-rdkit.md) | SMILES, descriptores, regla de Lipinski |
+| 04 | [PubChem desde Python](./practicas/04-pubchem-desde-python.md) | Consultar una base de datos química por API |
+| 05 | [Similitud y espacio químico](./practicas/05-similitud-y-espacio-quimico.md) | Huellas moleculares, Tanimoto, PCA |
+| 06 | [Estructuras 3D y conformeros](./practicas/06-estructuras-3d-y-conformeros.md) | Geometrías 3D y campo de fuerza MMFF94 |
+| 07 | [Primer cálculo cuántico con PySCF](./practicas/07-primer-calculo-cuantico-pyscf.md) | Hartree–Fock, DFT, HOMO/LUMO |
 
 ## Organización sugerida
 
 Tres sesiones de 4 horas:
 
-- **Sesión 1:** notebooks 00, 01 y 02 (Colab, Python básico, tablas).
-- **Sesión 2:** notebooks 03 y 04 (moléculas con RDKit, PubChem).
-- **Sesión 3:** notebooks 05, 06 y 07 (similitud, 3D, primer cálculo cuántico).
+- Sesión 1: prácticas 00, 01 y 02 (Colab, Python básico, tablas).
+- Sesión 2: prácticas 03 y 04 (moléculas con RDKit, PubChem).
+- Sesión 3: prácticas 05, 06 y 07 (similitud, 3D, primer cálculo cuántico).
 
-Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*).
+Cada notebook termina con ejercicios resueltos. Los retos de este sitio son distintos y no tienen solución publicada.
 
 ## Cómo usar
 
-1. Abra el notebook con el botón **Abrir en Colab** que aparece al inicio de cada página.
-2. Archivo › *Guardar una copia en Drive*.
-3. Ejecute las celdas en orden con **Shift + Enter**.
+1. Antes de la sesión, lea los conceptos de la práctica en este sitio.
+2. Abra el notebook con el botón *Abrir en Colab* que aparece al inicio de cada página y guarde una copia (*Archivo › Guardar una copia en Drive*).
+3. Ejecute las celdas en orden con Shift + Enter. Si algo falla, busque el mensaje en la sección de errores comunes.
+4. Después de clase, resuelva los retos.
 
 ## Datos
 
