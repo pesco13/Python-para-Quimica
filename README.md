@@ -1,8 +1,8 @@
-# Python para Química · QI452 Informática II
+# Python para Química
 
-Notebooks introductorios de Python aplicado a la química para el curso **Informática II** del programa de Química Industrial de la Universidad Tecnológica de Pereira (UTP).
+Notebooks introductorios de Python aplicado a la química para el programa de Química Industrial de la Universidad Tecnológica de Pereira (UTP).
 
-🌐 **Sitio web del curso:** https://pesco13.github.io/QI452-Python-Quimica/
+🌐 **Sitio web:** https://pesco13.github.io/QI452-Python-Quimica/
 
 Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de Google. No hay que instalar nada en el computador.
 
