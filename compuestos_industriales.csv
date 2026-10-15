@@ -1,0 +1,26 @@
+nombre,categoria,smiles
+Agua,Solvente,O
+Metanol,Solvente,CO
+Etanol,Solvente,CCO
+Acetona,Solvente,CC(C)=O
+Acetato de etilo,Solvente,CCOC(C)=O
+Hexano,Solvente,CCCCCC
+Tolueno,Solvente,Cc1ccccc1
+Glicerol,Materia prima,OCC(O)CO
+Urea,Materia prima,NC(N)=O
+Ácido acético,Materia prima,CC(=O)O
+Ácido cítrico,Aditivo alimentario,OC(=O)CC(O)(CC(=O)O)C(=O)O
+Ácido benzoico,Conservante,OC(=O)c1ccccc1
+Ácido sórbico,Conservante,C/C=C/C=C/C(=O)O
+Metilparabeno,Conservante,COC(=O)c1ccc(O)cc1
+Propilparabeno,Conservante,CCCOC(=O)c1ccc(O)cc1
+Vainillina,Aroma,COc1cc(C=O)ccc1O
+Limoneno,Aroma,CC1=CCC(CC1)C(C)=C
+Mentol,Aroma,CC(C)C1CCC(C)CC1O
+Capsaicina,Aroma,COc1cc(CNC(=O)CCCC/C=C/C(C)C)ccc1O
+Cafeína,Fármaco,Cn1cnc2c1c(=O)n(C)c(=O)n2C
+Paracetamol,Fármaco,CC(=O)Nc1ccc(O)cc1
+Ibuprofeno,Fármaco,CC(C)Cc1ccc(cc1)C(C)C(=O)O
+Ácido acetilsalicílico,Fármaco,CC(=O)Oc1ccccc1C(=O)O
+Bisfenol A,Monómero,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1
+Estireno,Monómero,C=Cc1ccccc1
