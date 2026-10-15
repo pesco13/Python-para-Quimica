@@ -39,7 +39,7 @@ Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*).
 
 ## Créditos y referencias
 
-Material elaborado por Paulina Escobar Martínez. La estructura de los temas se inspira en el curso de quimioinformática del grupo DIFACQUIM (UNAM), disponible bajo licencia MIT en https://github.com/DIFACQUIM/Cursos, y en TeachOpenCADD (https://github.com/volkamerlab/teachopencadd).
+La estructura de los temas se inspira en el curso de quimioinformática del grupo DIFACQUIM (UNAM), disponible bajo licencia MIT en https://github.com/DIFACQUIM/Cursos, y en TeachOpenCADD (https://github.com/volkamerlab/teachopencadd).
 
 * RDKit: Open-source cheminformatics. https://www.rdkit.org
 * Kim, S. et al. PubChem (PUG-REST). https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest

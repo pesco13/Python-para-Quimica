@@ -1,5 +1,7 @@
 // @ts-check
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // Usuario y repositorio de GitHub donde se publica el sitio.
 const USUARIO = 'pesco13';
@@ -33,6 +35,14 @@ const config = {
     locales: ['es'],
   },
 
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+      type: 'text/css',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -42,6 +52,8 @@ const config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.js',
           editUrl: `https://github.com/${USUARIO}/${REPO}/tree/main/`,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
@@ -108,7 +120,7 @@ const config = {
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} Paulina Escobar Martínez · Licencia MIT · Hecho con Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} · Licencia MIT · Hecho con Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
