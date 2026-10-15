@@ -71,6 +71,7 @@ const config = {
         logo: {
           alt: 'Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-oscuro.svg',
         },
         items: [
           {
