@@ -1,0 +1,77 @@
+---
+title: "00 · Bienvenida a Google Colab"
+description: "Abrir y guardar un notebook en Google Colab."
+sidebar_position: 1
+slug: 00-bienvenida-a-colab
+custom_edit_url: https://github.com/pesco13/QI452-Python-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb
+---
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb)
+
+:::tip[Cómo usar esta página]
+Abra el notebook con el botón **Abrir en Colab**, guarde una copia en su Drive (Archivo › *Guardar una copia en Drive*) y ejecute las celdas en orden con **Shift + Enter**.
+:::
+
+**Curso:**  Informática II
+
+**Objetivos**
+* Abrir y guardar un notebook en Google Colab.
+* Ejecutar celdas de código y de texto.
+* Instalar bibliotecas de Python en la nube, sin instalar nada en el computador.
+
+## ¿Qué es un notebook?
+
+Un *notebook* es un documento que mezcla **texto** (como este) y **código** que se puede ejecutar. Google Colab ejecuta el código en un computador de Google: solo se necesita un navegador y una cuenta de Google.
+
+**Antes de empezar:** Archivo › *Guardar una copia en Drive*. Así los cambios quedan en su cuenta y no se pierden.
+
+## Ejecutar una celda
+
+Haga clic en la celda de abajo y presione **Shift + Enter** (o el botón ▶).
+
+```python
+print("¡Hola, Química Industrial!")
+```
+
+```text
+¡Hola, Química Industrial!
+```
+
+Python también funciona como calculadora. La masa molar del agua:
+
+```python
+2 * 1.008 + 15.999
+```
+
+```text
+18.015
+```
+
+## Instalar bibliotecas
+
+Las herramientas de química (RDKit, PySCF) no vienen en Colab. Se instalan **en la nube** con `pip`. El signo `!` indica un comando del sistema. Cada vez que Colab se reinicia hay que volver a ejecutar esta celda.
+
+```python
+!pip install -q rdkit
+import rdkit
+print("RDKit versión", rdkit.__version__)
+```
+
+## Buenas prácticas
+
+* Ejecute las celdas **en orden**, de arriba hacia abajo.
+* Si algo falla de forma extraña: Entorno de ejecución › *Reiniciar sesión* y ejecute todo de nuevo.
+* Los mensajes de error en rojo dicen **qué** falló y **en qué línea**: léalos de abajo hacia arriba.
+
+## Ejercicio
+
+Calcule en una celda la masa molar del CO₂ usando C = 12.011 y O = 15.999.
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+12.011 + 2 * 15.999   # 44.009 g/mol
+```
+
+</details>

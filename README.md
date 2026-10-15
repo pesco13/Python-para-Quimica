@@ -2,20 +2,22 @@
 
 Notebooks introductorios de Python aplicado a la química para el curso **Informática II** del programa de Química Industrial de la Universidad Tecnológica de Pereira (UTP).
 
+🌐 **Sitio web del curso:** https://pesco13.github.io/QI452-Python-Quimica/
+
 Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de Google. No hay que instalar nada en el computador.
 
 ## Contenido
 
 | N.º | Notebook |
 |---|---|
-| 00 | [Bienvenida a Colab](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb) |
-| 01 | [Python basico para quimica](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb) |
-| 02 | [Tablas con pandas](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/02_Tablas_con_pandas.ipynb) |
-| 03 | [Moleculas con RDKit](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb) |
-| 04 | [PubChem desde Python](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/04_PubChem_desde_Python.ipynb) |
-| 05 | [Similitud y espacio quimico](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb) |
-| 06 | [Estructuras 3D y conformeros](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/06_Estructuras_3D_y_conformeros.ipynb) |
-| 07 | [Primer calculo cuantico PySCF](https://colab.research.google.com/github/TU_USUARIO/QI452-Python-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb) |
+| 00 | [Bienvenida a Colab](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb) |
+| 01 | [Python basico para quimica](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb) |
+| 02 | [Tablas con pandas](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/02_Tablas_con_pandas.ipynb) |
+| 03 | [Moleculas con RDKit](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb) |
+| 04 | [PubChem desde Python](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/04_PubChem_desde_Python.ipynb) |
+| 05 | [Similitud y espacio quimico](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb) |
+| 06 | [Estructuras 3D y conformeros](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/06_Estructuras_3D_y_conformeros.ipynb) |
+| 07 | [Primer calculo cuantico PySCF](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb) |
 
 Organización sugerida (3 sesiones de 4 h):
 
@@ -47,3 +49,7 @@ Material elaborado por Paulina Escobar Martínez. La estructura de los temas se 
 ## Licencia
 
 MIT (ver `LICENSE`).
+
+## Sitio web
+
+El sitio se genera con [Docusaurus](https://docusaurus.io) a partir de los notebooks de `notebooks/` y se publica automáticamente en GitHub Pages cada vez que se sube un cambio a la rama `main`. Para agregar o editar una práctica basta con modificar el notebook: `scripts/notebooks_a_paginas.py` crea la página correspondiente.

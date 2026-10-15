@@ -1,0 +1,109 @@
+---
+title: "05 · Similitud molecular y espacio químico"
+description: "Representar moléculas con huellas moleculares (fingerprints)."
+sidebar_position: 6
+slug: 05-similitud-y-espacio-quimico
+custom_edit_url: https://github.com/pesco13/QI452-Python-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb
+---
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb)
+
+:::tip[Cómo usar esta página]
+Abra el notebook con el botón **Abrir en Colab**, guarde una copia en su Drive (Archivo › *Guardar una copia en Drive*) y ejecute las celdas en orden con **Shift + Enter**.
+:::
+
+**Objetivos**
+* Representar moléculas con huellas moleculares (*fingerprints*).
+* Medir la similitud con el coeficiente de Tanimoto.
+* Construir un mapa del espacio químico con análisis de componentes principales (PCA).
+
+```python
+!pip install -q rdkit
+import pandas as pd, numpy as np
+import matplotlib.pyplot as plt
+from rdkit import Chem, DataStructs
+from rdkit.Chem import rdFingerprintGenerator, Descriptors, Crippen, rdMolDescriptors
+
+df = pd.read_csv("https://raw.githubusercontent.com/pesco13/QI452-Python-Quimica/main/datos/compuestos_industriales.csv")
+df["mol"] = df["smiles"].apply(Chem.MolFromSmiles)
+```
+
+## 1. Huellas moleculares
+
+Una huella de Morgan es una lista de ceros y unos: cada posición indica si la molécula contiene cierto fragmento alrededor de cada átomo.
+
+```python
+gen = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048)
+df["fp"] = df["mol"].apply(gen.GetFingerprint)
+print("Bits encendidos en la cafeína:", df.loc[df.nombre == "Cafeína", "fp"].iloc[0].GetNumOnBits())
+```
+
+## 2. Similitud de Tanimoto
+
+Tanimoto = fragmentos en común / fragmentos totales. Va de 0 (nada en común) a 1 (idénticas).
+
+```python
+ref = df.loc[df.nombre == "Metilparabeno", "fp"].iloc[0]
+df["sim_metilparabeno"] = df["fp"].apply(lambda fp: DataStructs.TanimotoSimilarity(ref, fp))
+df.sort_values("sim_metilparabeno", ascending=False)[["nombre", "categoria", "sim_metilparabeno"]].head(6).round(2)
+```
+
+## 3. Espacio químico con PCA
+
+Cada molécula se describe con 6 descriptores. El PCA los resume en dos ejes que conservan la mayor parte de la variación; moléculas parecidas quedan cerca en el mapa.
+
+```python
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+X = pd.DataFrame({
+    "MolWt": df.mol.apply(Descriptors.MolWt),
+    "LogP": df.mol.apply(Crippen.MolLogP),
+    "TPSA": df.mol.apply(rdMolDescriptors.CalcTPSA),
+    "HBD": df.mol.apply(rdMolDescriptors.CalcNumHBD),
+    "HBA": df.mol.apply(rdMolDescriptors.CalcNumHBA),
+    "RotB": df.mol.apply(rdMolDescriptors.CalcNumRotatableBonds),
+})
+Z = StandardScaler().fit_transform(X)      # misma escala para todos los descriptores
+pca = PCA(n_components=2)
+PC = pca.fit_transform(Z)
+print("Varianza explicada por PC1 y PC2:", pca.explained_variance_ratio_.round(2))
+```
+
+```python
+fig, ax = plt.subplots(figsize=(8, 6))
+for cat, sub in df.groupby("categoria"):
+    idx = sub.index
+    ax.scatter(PC[idx, 0], PC[idx, 1], label=cat, s=60)
+for i, n in enumerate(df.nombre):
+    ax.annotate(n, (PC[i, 0], PC[i, 1]), fontsize=7, alpha=0.7)
+ax.set_xlabel("PC1"); ax.set_ylabel("PC2"); ax.legend(fontsize=8)
+ax.set_title("Espacio químico de los compuestos del curso")
+plt.show()
+```
+
+## Ejercicios
+
+**1.** Repita la búsqueda de similitud con el ibuprofeno como referencia. ¿Qué compuestos aparecen primero?
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+ref = df.loc[df.nombre == "Ibuprofeno", "fp"].iloc[0]
+df["sim"] = df.fp.apply(lambda fp: DataStructs.TanimotoSimilarity(ref, fp))
+df.sort_values("sim", ascending=False)[["nombre", "sim"]].head()
+```
+
+</details>
+
+**2.** ¿Qué descriptores pesan más en PC1? Pista: `pca.components_[0]`.
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+pd.Series(pca.components_[0], index=X.columns).sort_values()
+```
+
+</details>

@@ -1,0 +1,140 @@
+---
+title: "03 · Moléculas en la computadora con RDKit"
+description: "Representar moléculas con SMILES e InChIKey."
+sidebar_position: 4
+slug: 03-moleculas-con-rdkit
+custom_edit_url: https://github.com/pesco13/QI452-Python-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb
+---
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb)
+
+:::tip[Cómo usar esta página]
+Abra el notebook con el botón **Abrir en Colab**, guarde una copia en su Drive (Archivo › *Guardar una copia en Drive*) y ejecute las celdas en orden con **Shift + Enter**.
+:::
+
+**Objetivos**
+* Representar moléculas con SMILES e InChIKey.
+* Dibujar estructuras.
+* Calcular descriptores moleculares y evaluar la regla de Lipinski.
+
+Un **SMILES** es una línea de texto que describe una molécula: `CCO` es el etanol, `c1ccccc1` el benceno (letras minúsculas = átomos aromáticos).
+
+```python
+!pip install -q rdkit
+from rdkit import Chem
+from rdkit.Chem import Draw, Descriptors, Crippen, rdMolDescriptors
+import pandas as pd
+```
+
+## 1. De SMILES a molécula
+
+```python
+cafeina = Chem.MolFromSmiles("Cn1cnc2c1c(=O)n(C)c(=O)n2C")
+cafeina
+```
+
+```python
+print("SMILES canónico:", Chem.MolToSmiles(cafeina))
+print("InChIKey:", Chem.MolToInchiKey(cafeina))
+print("Número de átomos pesados:", cafeina.GetNumAtoms())
+print("Fórmula:", rdMolDescriptors.CalcMolFormula(cafeina))
+```
+
+El **SMILES canónico** es único para cada molécula: aunque el etanol pueda escribirse `CCO` u `OCC`, RDKit devuelve siempre el mismo. El **InChIKey** es un código de 27 caracteres útil para buscar en bases de datos.
+
+```python
+print(Chem.MolToSmiles(Chem.MolFromSmiles("OCC")), Chem.MolToSmiles(Chem.MolFromSmiles("CCO")))
+```
+
+## 2. Descriptores moleculares
+
+Un descriptor es un número calculado a partir de la estructura:
+
+| Descriptor | Significado |
+|---|---|
+| MolWt | masa molar (g/mol) |
+| MolLogP | lipofilia estimada (log P octanol/agua) |
+| TPSA | área superficial polar (Å²), relacionada con permeabilidad |
+| HBD / HBA | donores y aceptores de puentes de hidrógeno |
+
+```python
+def descriptores(smiles):
+    mol = Chem.MolFromSmiles(smiles)
+    return {
+        "MolWt": Descriptors.MolWt(mol),
+        "LogP": Crippen.MolLogP(mol),
+        "TPSA": rdMolDescriptors.CalcTPSA(mol),
+        "HBD": rdMolDescriptors.CalcNumHBD(mol),
+        "HBA": rdMolDescriptors.CalcNumHBA(mol),
+        "Anillos": rdMolDescriptors.CalcNumRings(mol),
+    }
+
+descriptores("CC(C)Cc1ccc(cc1)C(C)C(=O)O")   # ibuprofeno
+```
+
+## 3. Aplicar a toda la tabla
+
+```python
+URL = "https://raw.githubusercontent.com/pesco13/QI452-Python-Quimica/main/datos/compuestos_industriales.csv"
+df = pd.read_csv(URL)
+tabla = pd.DataFrame([descriptores(s) for s in df["smiles"]])
+df = pd.concat([df, tabla], axis=1)
+df.round(2).head(10)
+```
+
+## 4. Regla de Lipinski
+
+Una molécula tiene probablemente buena absorción oral si cumple: MolWt ≤ 500, LogP ≤ 5, HBD ≤ 5, HBA ≤ 10. Se permite una violación.
+
+```python
+df["violaciones"] = ((df["MolWt"] > 500).astype(int) + (df["LogP"] > 5).astype(int)
+                     + (df["HBD"] > 5).astype(int) + (df["HBA"] > 10).astype(int))
+df["cumple_Lipinski"] = df["violaciones"] <= 1
+df[["nombre", "MolWt", "LogP", "HBD", "HBA", "cumple_Lipinski"]].round(2)
+```
+
+## 5. Dibujar varias moléculas
+
+```python
+farmacos = df[df["categoria"] == "Fármaco"]
+mols = [Chem.MolFromSmiles(s) for s in farmacos["smiles"]]
+Draw.MolsToGridImage(mols, molsPerRow=4, legends=list(farmacos["nombre"]), subImgSize=(220, 180))
+```
+
+## Ejercicios
+
+**1.** Dibuje el metilparabeno y el propilparabeno y compare su LogP. ¿Qué efecto tiene alargar la cadena?
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+for s in ["COC(=O)c1ccc(O)cc1", "CCCOC(=O)c1ccc(O)cc1"]:
+    print(s, round(Crippen.MolLogP(Chem.MolFromSmiles(s)), 2))
+# El propilparabeno es más lipofílico: cada CH2 adicional aumenta el LogP.
+```
+
+</details>
+
+**2.** Ordene la tabla por TPSA y responda: ¿qué categoría tiene los compuestos más polares?
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+df.sort_values("TPSA", ascending=False)[["nombre", "categoria", "TPSA"]].head(8)
+```
+
+</details>
+
+**3.** ¿Qué devuelve `Chem.MolFromSmiles("C1CC")`? ¿Por qué?
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+print(Chem.MolFromSmiles("C1CC"))
+# None: el anillo 1 se abre pero nunca se cierra; el SMILES no es válido.
+```
+
+</details>

@@ -1,0 +1,168 @@
+---
+title: "01 · Python básico para química"
+description: "Usar variables, listas, diccionarios, condicionales, ciclos y funciones."
+sidebar_position: 2
+slug: 01-python-basico-para-quimica
+custom_edit_url: https://github.com/pesco13/QI452-Python-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb
+---
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb)
+
+:::tip[Cómo usar esta página]
+Abra el notebook con el botón **Abrir en Colab**, guarde una copia en su Drive (Archivo › *Guardar una copia en Drive*) y ejecute las celdas en orden con **Shift + Enter**.
+:::
+
+**Objetivos**
+* Usar variables, listas, diccionarios, condicionales, ciclos y funciones.
+* Resolver cálculos químicos sencillos con código reutilizable.
+
+## 1. Variables y tipos de datos
+
+Una variable guarda un valor con un nombre. Los tipos más usados: `int` (entero), `float` (decimal), `str` (texto) y `bool` (verdadero/falso).
+
+*   Boolean (bool): es una variable que puede ser verdadera o falsa.
+
+*   Integer (int): representa números enteros positivos o negativos, como 8 o -678.
+
+* Floating point number (float): representa números reales, como 3.14159 o -6.5.
+
+* String de caracteres (str) : son cadenas de caracteres, es decir, valores de texto, por ejemplo "hola" o "banana".
+
+* Listas (list) : este tipo de valor es una lista, ya sea de valores integer o float. Por ejemplo: [1,2,3,4] o [1.23, 2, 3.54, 4].
+
+Para confirmar el tipo de valor con el que estamos trabajando podemos hacer uso de type( ) y el nombre de la variable dentro de los paréntesis.
+
+```python
+nombre = "Etanol"          # str
+masa_molar = 46.07         # float (g/mol)
+n_carbonos = 2             # int
+es_solvente = True         # bool
+print(nombre, masa_molar, n_carbonos, es_solvente)
+print(type(masa_molar))
+```
+
+```text
+Etanol 46.07 2 True
+<class 'float'>
+```
+
+## 2. Operaciones y unidades
+
+Moles a partir de una masa: n = m / M.
+
+```python
+masa_g = 23.0
+moles = masa_g / masa_molar
+print(f"{masa_g} g de {nombre} son {moles:.3f} mol")
+```
+
+```text
+23.0 g de Etanol son 0.499 mol
+```
+
+La expresión `f"..."` (f-string) inserta variables en un texto; `:.3f` muestra 3 decimales.
+
+## 3. Listas
+
+Una lista guarda varios valores en orden. Se recorre con `for`.
+
+```python
+temperaturas_C = [20, 25, 30, 35, 40]
+for t in temperaturas_C:
+    print(t, "°C =", t + 273.15, "K")
+```
+
+## 4. Diccionarios
+
+Un diccionario asocia una **clave** con un **valor**, como una tabla de masas atómicas.
+
+```python
+masas = {"H": 1.008, "C": 12.011, "N": 14.007, "O": 15.999, "S": 32.06, "Cl": 35.45}
+print(masas["O"])
+```
+
+## 5. Funciones
+
+Una función agrupa un cálculo para reutilizarlo. Esta calcula la masa molar a partir de una composición.
+
+```python
+def masa_molar_de(composicion):
+    """composicion: diccionario {elemento: número de átomos}"""
+    total = 0
+    for elemento, cantidad in composicion.items():
+        total += masas[elemento] * cantidad
+    return total
+
+glucosa = {"C": 6, "H": 12, "O": 6}
+print(f"M(glucosa) = {masa_molar_de(glucosa):.2f} g/mol")
+```
+
+## 6. Condicionales
+
+`if / elif / else` permite tomar decisiones, como clasificar una solución por su pH.
+
+```python
+def clasificar_pH(pH):
+    if pH < 7:
+        return "ácida"
+    elif pH == 7:
+        return "neutra"
+    else:
+        return "básica"
+
+for valor in [2.5, 7.0, 11.3]:
+    print(valor, "→", clasificar_pH(valor))
+```
+
+## 7. Un cálculo completo: gas ideal
+
+Volumen de 1 mol de gas a distintas temperaturas (P = 1 atm), V = nRT/P.
+
+```python
+R = 0.082057  # L·atm/(mol·K)
+def volumen_ideal(n, T_K, P_atm):
+    return n * R * T_K / P_atm
+
+for T in [273.15, 298.15, 373.15]:
+    print(f"T = {T:7.2f} K  →  V = {volumen_ideal(1, T, 1):.2f} L")
+```
+
+## Ejercicios
+
+**1.** Use `masa_molar_de` para calcular la masa molar del ácido sulfúrico (H₂SO₄).
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+print(masa_molar_de({"H": 2, "S": 1, "O": 4}))   # ≈ 98.07 g/mol
+```
+
+</details>
+
+**2.** Escriba una función `molaridad(masa_g, M, V_L)` y calcule la molaridad de 5.85 g de NaCl (M = 58.44 g/mol) en 250 mL.
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+def molaridad(masa_g, M, V_L):
+    return masa_g / M / V_L
+
+print(molaridad(5.85, 58.44, 0.250))   # ≈ 0.400 mol/L
+```
+
+</details>
+
+**3.** Con un ciclo `for`, calcule el pH de soluciones de HCl de concentración 0.1, 0.01 y 0.001 M (pH = −log₁₀[H⁺]). Pista: `import math` y `math.log10`.
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+import math
+for c in [0.1, 0.01, 0.001]:
+    print(c, "M → pH =", -math.log10(c))
+```
+
+</details>

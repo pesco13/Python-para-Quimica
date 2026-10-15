@@ -1,0 +1,10 @@
+{
+  "label": "Hands-on",
+  "position": 2,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Hands-on: Python para Química",
+    "description": "Ocho notebooks prácticos, de los primeros pasos en Google Colab hasta un cálculo de química cuántica. Cada página tiene el botón «Abrir en Colab» para ejecutarla en la nube, sin instalar nada."
+  }
+}

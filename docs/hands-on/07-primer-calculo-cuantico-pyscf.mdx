@@ -1,0 +1,119 @@
+---
+title: "07 · Primer cálculo de química cuántica con PySCF"
+description: "Calcular la energía de una molécula con Hartree–Fock y DFT."
+sidebar_position: 8
+slug: 07-primer-calculo-cuantico-pyscf
+custom_edit_url: https://github.com/pesco13/QI452-Python-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb
+---
+
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb)
+
+:::tip[Cómo usar esta página]
+Abra el notebook con el botón **Abrir en Colab**, guarde una copia en su Drive (Archivo › *Guardar una copia en Drive*) y ejecute las celdas en orden con **Shift + Enter**.
+:::
+
+**Objetivos**
+* Calcular la energía de una molécula con Hartree–Fock y DFT.
+* Obtener orbitales HOMO y LUMO y el momento dipolar.
+* Construir una curva de energía potencial.
+
+La química cuántica describe los **electrones**: resuelve de forma aproximada la ecuación de Schrödinger. Es más lenta que la mecánica molecular, pero da energías de enlace, orbitales, espectros y reactividad. PySCF es un programa libre que se usa desde Python.
+
+```python
+!pip install -q pyscf
+from pyscf import gto, scf, dft
+import numpy as np
+import matplotlib.pyplot as plt
+HARTREE_A_EV = 27.2114
+HARTREE_A_KCAL = 627.509
+```
+
+## 1. La molécula y el conjunto base
+
+Se dan las coordenadas en Å y un **conjunto base** (6-31G*): las funciones matemáticas con que se describen los orbitales. Bases más grandes son más exactas y más lentas.
+
+```python
+agua = gto.M(atom="O 0 0 0; H 0 0.757 0.587; H 0 -0.757 0.587", basis="6-31g*", verbose=0)
+print("Electrones:", agua.nelectron, "| Funciones de base:", agua.nao)
+```
+
+## 2. Hartree–Fock y DFT
+
+```python
+hf = scf.RHF(agua).run()
+ks = dft.RKS(agua); ks.xc = "b3lyp"; ks.run()
+print(f"E(HF)    = {hf.e_tot:.6f} Ha")
+print(f"E(B3LYP) = {ks.e_tot:.6f} Ha")
+print(f"Diferencia = {(hf.e_tot - ks.e_tot) * HARTREE_A_KCAL:.1f} kcal/mol")
+```
+
+La energía DFT es más baja porque incluye (de forma aproximada) la **correlación electrónica**, que Hartree–Fock ignora.
+
+## 3. Orbitales HOMO y LUMO y momento dipolar
+
+```python
+n_ocup = agua.nelectron // 2
+homo = ks.mo_energy[n_ocup - 1] * HARTREE_A_EV
+lumo = ks.mo_energy[n_ocup] * HARTREE_A_EV
+print(f"HOMO = {homo:.2f} eV | LUMO = {lumo:.2f} eV | brecha = {lumo - homo:.2f} eV")
+dip = ks.dip_moment(verbose=0)
+print(f"Momento dipolar = {np.linalg.norm(dip):.2f} D  (experimental ≈ 1.85 D)")
+```
+
+## 4. Curva de energía potencial del H₂
+
+Se calcula la energía para distintas distancias H–H. El mínimo es la longitud de enlace; la profundidad, la energía de enlace.
+
+```python
+distancias = np.arange(0.50, 2.55, 0.05)
+energias = []
+for d in distancias:
+    h2 = gto.M(atom=f"H 0 0 0; H 0 0 {d}", basis="6-31g**", verbose=0)
+    calc = dft.RKS(h2); calc.xc = "b3lyp"
+    energias.append(calc.kernel())
+energias = np.array(energias)
+d_min = distancias[energias.argmin()]
+plt.plot(distancias, (energias - energias.min()) * HARTREE_A_KCAL, "o-")
+plt.xlabel("Distancia H–H (Å)"); plt.ylabel("Energía relativa (kcal/mol)")
+plt.title(f"H₂, B3LYP/6-31G** · mínimo ≈ {d_min:.2f} Å (exp. 0.741 Å)")
+plt.show()
+```
+
+**Atención:** a distancias grandes un cálculo de capa cerrada (RKS) no describe bien la separación en dos átomos de H. Es una limitación conocida del método, no un error del programa.
+
+## Ejercicios
+
+**1.** Calcule la energía HF del agua con las bases `sto-3g`, `6-31g*` y `cc-pvdz`. ¿Cómo cambian la energía y el número de funciones de base?
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+for base in ["sto-3g", "6-31g*", "cc-pvdz"]:
+    m = gto.M(atom="O 0 0 0; H 0 0.757 0.587; H 0 -0.757 0.587", basis=base, verbose=0)
+    print(base, m.nao, round(scf.RHF(m).kernel(), 5))
+# Más funciones de base → energía más baja (más exacta) y cálculo más lento.
+```
+
+</details>
+
+**2.** Compare la brecha HOMO–LUMO (B3LYP/6-31G*) del etileno y del butadieno. ¿Cuál absorbería luz de mayor longitud de onda?
+
+<details>
+<summary>Ver solución</summary>
+
+```python
+from rdkit import Chem
+from rdkit.Chem import AllChem
+def brecha(smiles):
+    m = Chem.AddHs(Chem.MolFromSmiles(smiles)); AllChem.EmbedMolecule(m, randomSeed=1); AllChem.MMFFOptimizeMolecule(m)
+    xyz = "\n".join(Chem.MolToXYZBlock(m).splitlines()[2:])
+    mol = gto.M(atom=xyz, basis="6-31g*", verbose=0); k = dft.RKS(mol); k.xc = "b3lyp"; k.kernel()
+    n = mol.nelectron // 2
+    return (k.mo_energy[n] - k.mo_energy[n - 1]) * HARTREE_A_EV
+for s in ["C=C", "C=CC=C"]:
+    print(s, round(brecha(s), 2), "eV")
+# El butadieno tiene menor brecha: la conjugación acerca HOMO y LUMO → absorbe a mayor longitud de onda.
+```
+
+</details>
