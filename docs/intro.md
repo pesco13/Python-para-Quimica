@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Python para Química
 
-Ocho prácticas introductorias de Python aplicado a la química, para el programa de Química de la Universidad Tecnológica de Pereira (UTP).
+Ocho prácticas introductorias de Python aplicado a la química.
 
 El código de cada práctica se trabaja en Google Colab, así que solo se necesita un navegador y una cuenta de Google; no hay que instalar nada en el computador. Este sitio acompaña a los notebooks. En cada práctica encontrará la teoría que hay detrás del código, los errores más frecuentes y cómo resolverlos, retos para después de clase, un glosario y lecturas para profundizar.
 

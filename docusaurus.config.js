@@ -10,7 +10,7 @@ const REPO = 'QI452-Python-Quimica';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Python para Química',
-  tagline: 'Química · UTP',
+  tagline: 'Prácticas de Python aplicado a la química',
   favicon: 'img/logo.svg',
 
   future: {

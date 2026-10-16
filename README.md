@@ -1,6 +1,6 @@
 # Python para Química
 
-Notebooks introductorios de Python aplicado a la química para el programa de Química de la Universidad Tecnológica de Pereira (UTP).
+Notebooks introductorios de Python aplicado a la química.
 
 Sitio web con la teoría, los errores comunes y retos de cada práctica: https://pesco13.github.io/QI452-Python-Quimica/
 
