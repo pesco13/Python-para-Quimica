@@ -42,7 +42,7 @@ Cada notebook termina con ejercicios resueltos. Los retos de este sitio son dist
 
 ## Datos
 
-[`datos/compuestos_industriales.csv`](https://github.com/pesco13/QI452-Python-Quimica/blob/main/datos/compuestos_industriales.csv): 25 compuestos de uso industrial (solventes, conservantes, aromas, fármacos, monómeros) con su SMILES. Datos preparados para fines didácticos.
+[`datos/compuestos_industriales.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/compuestos_industriales.csv): 25 compuestos de uso industrial (solventes, conservantes, aromas, fármacos, monómeros) con su SMILES. Datos preparados para fines didácticos.
 
 ## Créditos y referencias
 
@@ -55,4 +55,4 @@ La estructura de los temas se inspira en el curso de quimioinformática del grup
 
 ## Licencia
 
-MIT (ver [`LICENSE`](https://github.com/pesco13/QI452-Python-Quimica/blob/main/LICENSE)).
+MIT (ver [`LICENSE`](https://github.com/pesco13/Python-para-Quimica/blob/main/LICENSE)).

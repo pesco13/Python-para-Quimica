@@ -5,7 +5,7 @@ import rehypeKatex from 'rehype-katex';
 
 // Usuario y repositorio de GitHub donde se publica el sitio.
 const USUARIO = 'pesco13';
-const REPO = 'QI452-Python-Quimica';
+const REPO = 'Python-para-Quimica';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {

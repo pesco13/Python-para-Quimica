@@ -6,7 +6,7 @@ sidebar_position: 1
 slug: 00-bienvenida-a-colab
 ---
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb)
 
 El código de esta práctica está en Colab. Esta página explica lo que pasa por detrás, reúne los errores más frecuentes y propone retos para después de clase.
 

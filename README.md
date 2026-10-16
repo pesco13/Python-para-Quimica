@@ -2,7 +2,7 @@
 
 Notebooks introductorios de Python aplicado a la química.
 
-Sitio web con la teoría, los errores comunes y retos de cada práctica: https://pesco13.github.io/QI452-Python-Quimica/
+Sitio web con la teoría, los errores comunes y retos de cada práctica: https://pesco13.github.io/Python-para-Quimica/
 
 Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de Google. No hay que instalar nada en el computador.
 
@@ -10,14 +10,14 @@ Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de
 
 | N.º | Notebook |
 |---|---|
-| 00 | [Bienvenida a Colab](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb) |
-| 01 | [Python basico para quimica](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb) |
-| 02 | [Tablas con pandas](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/02_Tablas_con_pandas.ipynb) |
-| 03 | [Moleculas con RDKit](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb) |
-| 04 | [PubChem desde Python](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/04_PubChem_desde_Python.ipynb) |
-| 05 | [Similitud y espacio quimico](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb) |
-| 06 | [Estructuras 3D y conformeros](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/06_Estructuras_3D_y_conformeros.ipynb) |
-| 07 | [Primer calculo cuantico PySCF](https://colab.research.google.com/github/pesco13/QI452-Python-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb) |
+| 00 | [Bienvenida a Colab](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb) |
+| 01 | [Python basico para quimica](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb) |
+| 02 | [Tablas con pandas](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/02_Tablas_con_pandas.ipynb) |
+| 03 | [Moleculas con RDKit](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb) |
+| 04 | [PubChem desde Python](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/04_PubChem_desde_Python.ipynb) |
+| 05 | [Similitud y espacio quimico](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb) |
+| 06 | [Estructuras 3D y conformeros](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/06_Estructuras_3D_y_conformeros.ipynb) |
+| 07 | [Primer calculo cuantico PySCF](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb) |
 
 Organización sugerida (3 sesiones de 4 h):
 
