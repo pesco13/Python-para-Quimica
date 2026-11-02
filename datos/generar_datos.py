@@ -1,16 +1,19 @@
 """
-Genera los datos de laboratorio de cada estudiante del curso Python para Quimica.
+Genera series sinteticas de datos de laboratorio para practicar ajustes.
 
-Cada numero de lista recibe un conjunto distinto pero reproducible: los mismos
-datos salen siempre que se use el mismo numero. Asi nadie puede entregar el
-trabajo de otro y, a la vez, el profesor puede regenerar cualquier conjunto.
+Produce una curva de calibracion UV-Vis y un seguimiento cinetico a cuatro
+temperaturas a partir de un numero entero que actua de semilla. El mismo
+numero da siempre los mismos valores, y numeros distintos dan series
+distintas con el mismo comportamiento fisico. Util para practicar una
+regresion, un ajuste no lineal o una grafica de Arrhenius sin depender de
+haber medido antes en el laboratorio.
 
 Uso en Google Colab
 -------------------
     !wget -q https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/datos/generar_datos.py
     from generar_datos import calibracion, cinetica, mi_familia, mi_asignacion
 
-    NUMERO = 7                      # su numero de lista
+    NUMERO = 7                      # la semilla que quiera
     print(mi_asignacion(NUMERO))
     patrones, problema = calibracion(NUMERO)
     serie = cinetica(NUMERO)
@@ -18,7 +21,7 @@ Uso en Google Colab
 
 Uso desde la terminal
 ---------------------
-    python generar_datos.py 7       # escribe los CSV en datos_estudiante_07/
+    python generar_datos.py 7       # escribe los CSV en datos_07/
 """
 
 from __future__ import annotations
@@ -51,8 +54,9 @@ ANALITOS = [
     ("Cromato de potasio", 372, 4800.0),
 ]
 
-# Reacciones de seguimiento cinetico, con el orden real que el estudiante debe
-# descubrir y una energia de activacion de referencia en kJ/mol.
+# Reacciones de seguimiento cinetico, con el orden real que hay que
+# descubrir a partir de los datos y una energia de activacion de referencia
+# en kJ/mol. Ninguno de los dos valores aparece en los CSV generados.
 REACCIONES = [
     ("Descomposición del peróxido de hidrógeno", 1, 75.0),
     ("Hidrólisis del acetato de etilo en medio básico", 2, 47.0),
@@ -70,14 +74,14 @@ R_GAS = 8.314462618e-3  # kJ / (mol K)
 
 
 def _generador(numero: int, bloque: int) -> np.random.Generator:
-    """Un generador distinto por estudiante y por tipo de dato."""
+    """Un generador distinto por semilla y por tipo de dato."""
     if not isinstance(numero, (int, np.integer)) or numero < 1:
-        raise ValueError("El numero de lista debe ser un entero mayor o igual a 1.")
+        raise ValueError("La semilla debe ser un entero mayor o igual a 1.")
     return np.random.default_rng(1000 * bloque + int(numero))
 
 
 def mi_asignacion(numero: int) -> dict:
-    """Devuelve que familia de compuestos, que analito y que reaccion le tocaron."""
+    """Devuelve que familia de compuestos, que analito y que reaccion corresponden a la semilla."""
     tabla = cargar_familias()
     familias = sorted(tabla["familia"].unique())
     analito, lam, eps = ANALITOS[(numero - 1) % len(ANALITOS)]
@@ -99,7 +103,7 @@ def cargar_familias() -> pd.DataFrame:
 
 
 def mi_familia(numero: int) -> pd.DataFrame:
-    """Los seis compuestos de partida del estudiante."""
+    """Los seis compuestos de la familia que corresponde a la semilla."""
     tabla = cargar_familias()
     familias = sorted(tabla["familia"].unique())
     elegida = familias[(numero - 1) % len(familias)]
@@ -187,8 +191,8 @@ def cinetica(numero: int) -> pd.DataFrame:
 
 
 def guardar(numero: int, carpeta: str | None = None) -> str:
-    """Escribe los tres CSV del estudiante y devuelve la carpeta creada."""
-    carpeta = carpeta or f"datos_estudiante_{numero:02d}"
+    """Escribe los CSV de esa semilla y devuelve la carpeta creada."""
+    carpeta = carpeta or f"datos_{numero:02d}"
     os.makedirs(carpeta, exist_ok=True)
     patrones, problema = calibracion(numero)
     patrones.to_csv(os.path.join(carpeta, "calibracion_patrones.csv"), index=False)
@@ -200,7 +204,7 @@ def guardar(numero: int, carpeta: str | None = None) -> str:
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        sys.exit("Uso: python generar_datos.py NUMERO_DE_LISTA")
+        sys.exit("Uso: python generar_datos.py SEMILLA")
     n = int(sys.argv[1])
     print(mi_asignacion(n))
     print("Datos escritos en:", guardar(n))

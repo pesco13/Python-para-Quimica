@@ -27,24 +27,16 @@ El código de cada práctica se trabaja en Google Colab, así que solo se necesi
 | 10 | [Cinética y ajuste](./practicas/10-cinetica-y-ajuste.md) | Orden de reacción, `curve_fit`, Arrhenius |
 | 11 | [Informe reproducible](./practicas/11-informe-reproducible.md) | Entorno, estructura y métodos |
 
-## Organización del curso
+## Organización sugerida
 
-Diez sesiones de 2 horas repartidas en cinco semanas. Cada sesión termina con un entregable que el estudiante construye con **sus propios datos**, siguiendo un paso a paso con criterios de aceptación verificables. Todo eso está en la sección [Entregables](./entregables/00-como-funciona.md): calendario, asignación de sistemas químicos por número de lista, formato de entrega, rúbrica y política de uso de asistentes de IA.
+Las doce prácticas están pensadas para recorrerse en orden, pero cada una se sostiene por sí sola y puede consultarse de forma aislada.
 
-| Semana | Sesión | Prácticas | Entregable |
-|---|---|---|---|
-| 1 | [1](./entregables/01-calculos-de-laboratorio.md) | 00, 01 | Hoja de cálculos de laboratorio |
-| 1 | [2](./entregables/02-tablas-y-graficas.md) | 02, 08 | Tabla propia y dos figuras |
-| 2 | [3](./entregables/03-calibracion.md) | 09 | Concentración de la muestra con su incertidumbre |
-| 2 | [4](./entregables/04-cinetica.md) | 10 | Orden de reacción y energía de activación |
-| 3 | [5](./entregables/05-descriptores.md) | 03 | Tabla de descriptores |
-| 3 | [6](./entregables/06-pubchem.md) | 04 | Tabla enriquecida desde PubChem |
-| 4 | [7](./entregables/07-espacio-quimico.md) | 05 | Mapa del espacio químico |
-| 4 | [8](./entregables/08-conformeros.md) | 06 | Análisis conformacional y archivo XYZ |
-| 5 | [9](./entregables/09-calculo-cuantico.md) | 07 | HOMO, LUMO y momento dipolar |
-| 5 | [10](./entregables/10-informe-final.md) | 11 | Informe final reproducible |
+- **Primeros pasos** (00 a 02): el entorno, el lenguaje y las tablas.
+- **Datos de laboratorio** (08 a 10): gráficas, ajuste de una calibración y de una cinética.
+- **Moléculas** (03 a 07): estructura, bases de datos, similitud, geometría 3D y estructura electrónica.
+- **Cierre** (11): cómo dejar un trabajo que otra persona pueda repetir.
 
-Si se dispone de menos tiempo, las prácticas 00 a 07 por sí solas cubren tres sesiones de 4 horas.
+El bloque de datos de laboratorio solo necesita las prácticas 00 a 02; el de moléculas, además, la 03. Si dispone de poco tiempo, las prácticas 00 a 07 forman un recorrido completo por sí mismas.
 
 Cada notebook termina con ejercicios resueltos y con celdas de autocomprobación (`assert`). Los retos de este sitio son distintos y no tienen solución publicada.
 
@@ -60,12 +52,21 @@ Cada notebook termina con ejercicios resueltos y con celdas de autocomprobación
 | Archivo | Qué contiene |
 |---|---|
 | [`compuestos_industriales.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/compuestos_industriales.csv) | 25 compuestos de uso industrial con su SMILES |
-| [`compuestos_familias.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/compuestos_familias.csv) | 150 compuestos en 25 familias temáticas, una por estudiante |
-| [`asignaciones.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/asignaciones.csv) | Qué familia, analito y reacción corresponde a cada número de lista |
-| [`pubchem_respaldo.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/pubchem_respaldo.csv) | Propiedades ya descargadas de PubChem, por si la API falla en clase |
-| [`generar_datos.py`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/generar_datos.py) | Genera los datos de calibración y cinética de cada estudiante |
+| [`compuestos_familias.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/compuestos_familias.csv) | 150 compuestos repartidos en 25 familias temáticas |
+| [`pubchem_respaldo.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/pubchem_respaldo.csv) | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
+| [`generar_datos.py`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/generar_datos.py) | Genera series sintéticas de calibración y de cinética a partir de una semilla |
 
-Los datos de laboratorio de cada estudiante son distintos pero reproducibles: el mismo número de lista da siempre los mismos valores. Todos los SMILES se validaron con RDKit.
+`generar_datos.py` produce conjuntos de datos sintéticos de calibración y de cinética a partir de un número entero que actúa de semilla: el mismo número da siempre los mismos valores, y números distintos dan series distintas con el mismo comportamiento físico. Sirve para practicar un ajuste sin depender de haber medido antes en el laboratorio.
+
+Todos los SMILES se validaron con RDKit.
+
+## Autoría
+
+Material elaborado por **Paulina Escobar** ([ORCID 0009-0009-1454-212X](https://orcid.org/0009-0009-1454-212X)).
+
+Para erratas y sugerencias: [p.escobar@utp.edu.co](mailto:p.escobar@utp.edu.co), o abra un [issue en el repositorio](https://github.com/pesco13/Python-para-Quimica/issues).
+
+Si usa este material, cítelo según [`CITATION.cff`](https://github.com/pesco13/Python-para-Quimica/blob/main/CITATION.cff).
 
 ## Créditos y referencias
 

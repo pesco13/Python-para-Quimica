@@ -25,36 +25,27 @@ Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de
 
 Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*), y con celdas de autocomprobación (`assert`) que avisan si algo quedó mal.
 
-## Organización del curso
+## Organización sugerida
 
-Diez sesiones de 2 h repartidas en cinco semanas, cada una con un entregable individual. El calendario, el paso a paso de cada entregable, los criterios de aceptación y la rúbrica están en el sitio web, en la sección [Entregables](https://pesco13.github.io/Python-para-Quimica/entregables).
+Las doce prácticas se pueden recorrer en orden o consultarse de forma aislada.
 
-| Semana | Sesión | Notebooks | Entregable |
-|---|---|---|---|
-| 1 | 1 | 00, 01 | Hoja de cálculos de laboratorio |
-| 1 | 2 | 02, 08 | Tabla propia y dos figuras |
-| 2 | 3 | 09 | Concentración de la muestra con su incertidumbre |
-| 2 | 4 | 10 | Orden de reacción y energía de activación |
-| 3 | 5 | 03 | Tabla de descriptores |
-| 3 | 6 | 04 | Tabla enriquecida desde PubChem |
-| 4 | 7 | 05 | Mapa del espacio químico |
-| 4 | 8 | 06 | Análisis conformacional y archivo XYZ |
-| 5 | 9 | 07 | HOMO, LUMO y momento dipolar |
-| 5 | 10 | 11 | Informe final reproducible |
+* **Primeros pasos** (00 a 02): entorno, lenguaje y tablas.
+* **Datos de laboratorio** (08 a 10): gráficas, calibración y cinética.
+* **Moléculas** (03 a 07): estructura, bases de datos, similitud, 3D y estructura electrónica.
+* **Cierre** (11): trabajo reproducible.
 
-Si se dispone de menos tiempo, los notebooks 00 a 07 por sí solos cubren tres sesiones de 4 h.
+Las prácticas 00 a 07 por sí solas forman un recorrido completo, que cabe en tres sesiones de 4 h.
 
 ## Datos
 
 | Archivo | Qué contiene |
 |---|---|
 | `datos/compuestos_industriales.csv` | 25 compuestos de uso industrial con su SMILES. Es el conjunto de las prácticas 02 a 07 |
-| `datos/compuestos_familias.csv` | 150 compuestos repartidos en 25 familias temáticas. Cada estudiante trabaja con una |
-| `datos/asignaciones.csv` | Qué familia, analito y reacción le corresponde a cada número de lista |
-| `datos/pubchem_respaldo.csv` | Propiedades de los 150 compuestos ya descargadas de PubChem, para usar si la API falla en clase |
-| `datos/generar_datos.py` | Genera los datos de calibración y de cinética de cada estudiante a partir de su número de lista |
+| `datos/compuestos_familias.csv` | 150 compuestos repartidos en 25 familias temáticas |
+| `datos/pubchem_respaldo.csv` | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
+| `datos/generar_datos.py` | Genera series sintéticas de calibración y de cinética a partir de una semilla |
 
-Los datos de cada estudiante son distintos pero reproducibles: el mismo número de lista da siempre los mismos valores.
+El mismo número de semilla da siempre los mismos valores, y números distintos dan series distintas con el mismo comportamiento físico.
 
 ```python
 !wget -q -O generar_datos.py https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/datos/generar_datos.py
@@ -69,6 +60,12 @@ Todos los SMILES se validaron con RDKit.
 1. Abra el notebook con el botón *Abrir en Colab*.
 2. Archivo › *Guardar una copia en Drive*.
 3. Ejecute las celdas en orden con Shift + Enter.
+
+## Autoría
+
+Material elaborado por **Paulina Escobar** ([ORCID 0009-0009-1454-212X](https://orcid.org/0009-0009-1454-212X)) · [p.escobar@utp.edu.co](mailto:p.escobar@utp.edu.co)
+
+Si usa este material, cítelo según `CITATION.cff`.
 
 ## Créditos y referencias
 

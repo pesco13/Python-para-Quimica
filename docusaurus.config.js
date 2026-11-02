@@ -7,6 +7,11 @@ import rehypeKatex from 'rehype-katex';
 const USUARIO = 'pesco13';
 const REPO = 'Python-para-Quimica';
 
+// Autoria del material.
+const AUTOR = 'Paulina Escobar';
+const CORREO = 'p.escobar@utp.edu.co';
+const ORCID = 'https://orcid.org/0009-0009-1454-212X';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Python para Química',
@@ -28,6 +33,7 @@ const config = {
   customFields: {
     usuario: USUARIO,
     repo: REPO,
+    autor: AUTOR,
   },
 
   i18n: {
@@ -97,11 +103,6 @@ const config = {
             label: 'Contenido',
           },
           {
-            to: '/entregables',
-            label: 'Entregables',
-            position: 'left',
-          },
-          {
             href: `https://github.com/${USUARIO}/${REPO}`,
             label: 'GitHub',
             position: 'right',
@@ -116,7 +117,6 @@ const config = {
             items: [
               {label: 'Inicio', to: '/'},
               {label: 'Prácticas', to: '/practicas'},
-              {label: 'Entregables', to: '/entregables'},
             ],
           },
           {
@@ -129,13 +129,22 @@ const config = {
             ],
           },
           {
+            title: 'Autoría',
+            items: [
+              {label: AUTOR, href: ORCID},
+              {label: 'ORCID', href: ORCID},
+              {label: 'Escribir', href: `mailto:${CORREO}`},
+            ],
+          },
+          {
             title: 'Más',
             items: [
               {label: 'GitHub', href: `https://github.com/${USUARIO}/${REPO}`},
+              {label: 'Cómo citar', href: `https://github.com/${USUARIO}/${REPO}/blob/main/CITATION.cff`},
             ],
           },
         ],
-        copyright: `© ${new Date().getFullYear()} · Licencia MIT · Hecho con Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} ${AUTOR} · Código con licencia MIT, textos con CC BY 4.0 · Hecho con Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
