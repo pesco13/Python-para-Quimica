@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Si usa este material, por favor citelo asi."
+title: "Python para Quimica: practicas introductorias de programacion aplicada a la quimica"
+abstract: >-
+  Curso introductorio de Python para estudiantes de quimica, con doce practicas
+  en Google Colab que van desde los primeros pasos en un notebook hasta el
+  tratamiento de datos de laboratorio, la quimioinformatica con RDKit y un
+  primer calculo de estructura electronica. Incluye un bloque de diez sesiones
+  con entregables individuales y rubrica.
+type: software
+authors:
+  - family-names: "Apellido"
+    given-names: "Nombre"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+license: MIT
+repository-code: "https://github.com/pesco13/Python-para-Quimica"
+url: "https://pesco13.github.io/Python-para-Quimica/"
+keywords:
+  - quimica
+  - python
+  - ensenanza
+  - quimioinformatica
+  - RDKit

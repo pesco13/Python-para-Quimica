@@ -35,6 +35,21 @@ const config = {
     locales: ['es'],
   },
 
+  themes: [
+    [
+      // Buscador que funciona sin cuenta de Algolia: construye el indice
+      // durante el build y lo sirve como un archivo estatico mas.
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        hashed: true,
+        language: ['es'],
+        indexBlog: false,
+        docsRouteBasePath: '/',
+      }),
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -46,6 +61,7 @@ const config = {
           editUrl: `https://github.com/${USUARIO}/${REPO}/tree/main/`,
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
@@ -81,6 +97,11 @@ const config = {
             label: 'Contenido',
           },
           {
+            to: '/entregables',
+            label: 'Entregables',
+            position: 'left',
+          },
+          {
             href: `https://github.com/${USUARIO}/${REPO}`,
             label: 'GitHub',
             position: 'right',
@@ -95,6 +116,7 @@ const config = {
             items: [
               {label: 'Inicio', to: '/'},
               {label: 'Prácticas', to: '/practicas'},
+              {label: 'Entregables', to: '/entregables'},
             ],
           },
           {

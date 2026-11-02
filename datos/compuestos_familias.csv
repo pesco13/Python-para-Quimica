@@ -1,0 +1,151 @@
+familia,nombre,smiles,uso
+Solventes próticos,Metanol,CO,"Solvente, combustible"
+Solventes próticos,Etanol,CCO,"Solvente, desinfectante"
+Solventes próticos,1-Propanol,CCCO,Solvente industrial
+Solventes próticos,2-Propanol,CC(C)O,"Antiseptico, limpieza"
+Solventes próticos,1-Butanol,CCCCO,Solvente de recubrimientos
+Solventes próticos,Alcohol bencílico,OCc1ccccc1,"Solvente, conservante"
+Solventes apróticos,Acetona,CC(C)=O,"Solvente, quitaesmalte"
+Solventes apróticos,Acetonitrilo,CC#N,Fase movil en HPLC
+Solventes apróticos,Dimetilsulfóxido,CS(C)=O,"Solvente, criopreservacion"
+Solventes apróticos,"N,N-Dimetilformamida",CN(C)C=O,Solvente de sintesis
+Solventes apróticos,Tetrahidrofurano,C1CCOC1,Solvente de reacciones
+Solventes apróticos,Acetato de etilo,CCOC(C)=O,"Extraccion, pegamentos"
+Hidrocarburos aromáticos,Benceno,c1ccccc1,Materia prima petroquimica
+Hidrocarburos aromáticos,Tolueno,Cc1ccccc1,"Solvente, diluyente"
+Hidrocarburos aromáticos,o-Xileno,Cc1ccccc1C,Precursor de anhidrido ftalico
+Hidrocarburos aromáticos,Estireno,C=Cc1ccccc1,Monomero de poliestireno
+Hidrocarburos aromáticos,Naftaleno,c1ccc2ccccc2c1,"Antipolillas, precursor"
+Hidrocarburos aromáticos,Bifenilo,c1ccc(-c2ccccc2)cc1,Fluido de transferencia de calor
+Ácidos carboxílicos,Ácido fórmico,O=CO,"Curtido, conservante"
+Ácidos carboxílicos,Ácido acético,CC(=O)O,"Vinagre, industria quimica"
+Ácidos carboxílicos,Ácido propiónico,CCC(=O)O,Conservante de panificacion
+Ácidos carboxílicos,Ácido butírico,CCCC(=O)O,"Aroma, intermediario"
+Ácidos carboxílicos,Ácido láctico,CC(O)C(=O)O,"Alimentos, polimeros"
+Ácidos carboxílicos,Ácido cítrico,O=C(O)CC(O)(CC(=O)O)C(=O)O,Acidulante
+Conservantes alimentarios,Ácido benzoico,O=C(O)c1ccccc1,Conservante
+Conservantes alimentarios,Ácido sórbico,CC=CC=CC(=O)O,Antifungico
+Conservantes alimentarios,Metilparabeno,COC(=O)c1ccc(O)cc1,Conservante cosmetico
+Conservantes alimentarios,Propilparabeno,CCCOC(=O)c1ccc(O)cc1,Conservante cosmetico
+Conservantes alimentarios,Ácido ascórbico,O=C1O[C@H]([C@@H](O)CO)C(O)=C1O,"Antioxidante, vitamina C"
+Conservantes alimentarios,Benzoato de sodio,O=C([O-])c1ccccc1.[Na+],Conservante de bebidas
+Aromas y fragancias,Vainillina,COc1cc(C=O)ccc1O,Aroma de vainilla
+Aromas y fragancias,Limoneno,C=C(C)[C@H]1CC=C(C)CC1,Aroma citrico
+Aromas y fragancias,Mentol,CC(C)[C@@H]1CC[C@@H](C)C[C@H]1O,Sensacion de frescor
+Aromas y fragancias,Eugenol,C=CCc1ccc(O)c(OC)c1,Aroma de clavo
+Aromas y fragancias,Cinamaldehído,O=CC=Cc1ccccc1,Aroma de canela
+Aromas y fragancias,Acetato de linalilo,C=CC(C)(CCC=C(C)C)OC(C)=O,Aroma de lavanda
+Monómeros de polímeros,Etileno,C=C,Monomero de polietileno
+Monómeros de polímeros,Propileno,C=CC,Monomero de polipropileno
+Monómeros de polímeros,Cloruro de vinilo,C=CCl,Monomero de PVC
+Monómeros de polímeros,Estireno,C=Cc1ccccc1,Monomero de poliestireno
+Monómeros de polímeros,Metacrilato de metilo,C=C(C)C(=O)OC,Monomero de acrilico
+Monómeros de polímeros,Acrilonitrilo,C=CC#N,Monomero de fibras
+Analgésicos y antiinflamatorios,Paracetamol,CC(=O)Nc1ccc(O)cc1,Analgesico
+Analgésicos y antiinflamatorios,Ácido acetilsalicilico,CC(=O)Oc1ccccc1C(=O)O,Analgesico
+Analgésicos y antiinflamatorios,Ibuprofeno,CC(C)Cc1ccc(C(C)C(=O)O)cc1,Antiinflamatorio
+Analgésicos y antiinflamatorios,Naproxeno,COc1ccc2cc(C(C)C(=O)O)ccc2c1,Antiinflamatorio
+Analgésicos y antiinflamatorios,Diclofenaco,O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl,Antiinflamatorio
+Analgésicos y antiinflamatorios,Ketoprofeno,CC(C(=O)O)c1cccc(C(=O)c2ccccc2)c1,Antiinflamatorio
+Sulfonamidas,Sulfanilamida,Nc1ccc(S(N)(=O)=O)cc1,Antibacteriano
+Sulfonamidas,Sulfametoxazol,Cc1cc(NS(=O)(=O)c2ccc(N)cc2)no1,Antibacteriano
+Sulfonamidas,Sulfadiazina,Nc1ccc(S(=O)(=O)Nc2ncccn2)cc1,Antibacteriano
+Sulfonamidas,Sulfatiazol,Nc1ccc(S(=O)(=O)Nc2nccs2)cc1,Antibacteriano
+Sulfonamidas,Sulfapiridina,Nc1ccc(S(=O)(=O)Nc2ccccn2)cc1,Antibacteriano
+Sulfonamidas,Sulfacetamida,CC(=O)NS(=O)(=O)c1ccc(N)cc1,Antibacteriano topico
+Polioles,Glicerol,OCC(O)CO,Humectante
+Polioles,Etilenglicol,OCCO,Anticongelante
+Polioles,Propilenglicol,CC(O)CO,"Alimentos, cosmetica"
+Polioles,Sorbitol,OC[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)CO,Edulcorante
+Polioles,Xilitol,OC[C@@H](O)[C@H](O)[C@@H](O)CO,Edulcorante
+Polioles,Manitol,OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO,"Diuretico, edulcorante"
+Aminoácidos,Glicina,NCC(=O)O,Aminoacido
+Aminoácidos,L-Alanina,C[C@@H](N)C(=O)O,Aminoacido
+Aminoácidos,L-Valina,CC(C)[C@@H](N)C(=O)O,Aminoacido esencial
+Aminoácidos,L-Fenilalanina,N[C@@H](Cc1ccccc1)C(=O)O,Aminoacido esencial
+Aminoácidos,L-Serina,N[C@@H](CO)C(=O)O,Aminoacido
+Aminoácidos,L-Cisteína,N[C@@H](CS)C(=O)O,Aminoacido azufrado
+Alcaloides y estimulantes,Cafeína,Cn1c(=O)c2c(ncn2C)n(C)c1=O,Estimulante
+Alcaloides y estimulantes,Teobromina,Cn1cnc2c1c(=O)[nH]c(=O)n2C,Alcaloide del cacao
+Alcaloides y estimulantes,Teofilina,Cn1c(=O)c2[nH]cnc2n(C)c1=O,Broncodilatador
+Alcaloides y estimulantes,Nicotina,CN1CCC[C@H]1c1cccnc1,Alcaloide del tabaco
+Alcaloides y estimulantes,Capsaicina,COc1cc(CNC(=O)CCCCC=CC(C)C)ccc1O,Picante del chile
+Alcaloides y estimulantes,Piperina,O=C(/C=C/C=C/c1ccc2c(c1)OCO2)N1CCCCC1,Picante de la pimienta
+Agroquímicos,Glifosato,O=C(O)CNCP(=O)(O)O,Herbicida
+Agroquímicos,Atrazina,CCNc1nc(Cl)nc(NC(C)C)n1,Herbicida
+Agroquímicos,"Ácido 2,4-diclorofenoxiacético",O=C(O)COc1ccc(Cl)cc1Cl,Herbicida
+Agroquímicos,Carbaril,CNC(=O)Oc1cccc2ccccc12,Insecticida
+Agroquímicos,Malatión,CCOC(=O)CC(SP(=S)(OC)OC)C(=O)OCC,Insecticida
+Agroquímicos,DDT,Clc1ccc(C(c2ccc(Cl)cc2)C(Cl)(Cl)Cl)cc1,Insecticida prohibido
+Colorantes e indicadores,Azobenceno,c1ccc(N=Nc2ccccc2)cc1,Colorante modelo
+Colorantes e indicadores,Anaranjado de metilo,CN(C)c1ccc(N=Nc2ccc(S(=O)(=O)[O-])cc2)cc1.[Na+],Indicador acido-base
+Colorantes e indicadores,Sudan I,Oc1ccc2ccccc2c1N=Nc1ccccc1,Colorante azoico
+Colorantes e indicadores,p-Nitroanilina,Nc1ccc([N+](=O)[O-])cc1,Intermediario de colorantes
+Colorantes e indicadores,Fenolftaleína,O=C1OC(c2ccc(O)cc2)(c2ccc(O)cc2)c2ccccc21,Indicador acido-base
+Colorantes e indicadores,Rojo de metilo,CN(C)c1ccc(N=Nc2ccccc2C(=O)O)cc1,Indicador acido-base
+Ácidos grasos,Ácido láurico,CCCCCCCCCCCC(=O)O,"Jabones, tensioactivos"
+Ácidos grasos,Ácido palmítico,CCCCCCCCCCCCCCCC(=O)O,Grasa saturada
+Ácidos grasos,Ácido esteárico,CCCCCCCCCCCCCCCCCC(=O)O,"Velas, cosmetica"
+Ácidos grasos,Ácido oleico,CCCCCCCC/C=C\CCCCCCCC(=O)O,Aceite de oliva
+Ácidos grasos,Ácido linoleico,CCCCC/C=C\C/C=C\CCCCCCCC(=O)O,Acido graso esencial
+Ácidos grasos,Ácido mirístico,CCCCCCCCCCCCCC(=O)O,Jabones
+Fenoles y antioxidantes,Fenol,Oc1ccccc1,"Desinfectante, resinas"
+Fenoles y antioxidantes,Hidroquinona,Oc1ccc(O)cc1,Revelador fotografico
+Fenoles y antioxidantes,Catecol,Oc1ccccc1O,Intermediario
+Fenoles y antioxidantes,Resorcinol,Oc1cccc(O)c1,"Adhesivos, dermatologia"
+Fenoles y antioxidantes,BHT,Cc1cc(C(C)(C)C)c(O)c(C(C)(C)C)c1,Antioxidante alimentario
+Fenoles y antioxidantes,BHA,COc1ccc(O)c(C(C)(C)C)c1,Antioxidante alimentario
+Polifenoles naturales,Quercetina,O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12,Flavonoide
+Polifenoles naturales,Resveratrol,Oc1ccc(/C=C/c2cc(O)cc(O)c2)cc1,Polifenol del vino
+Polifenoles naturales,Ácido gálico,O=C(O)c1cc(O)c(O)c(O)c1,Taninos
+Polifenoles naturales,Ácido cafeico,O=C(O)/C=C/c1ccc(O)c(O)c1,Polifenol del cafe
+Polifenoles naturales,Curcumina,COc1cc(/C=C/C(=O)CC(=O)/C=C/c2ccc(O)c(OC)c2)ccc1O,Pigmento de la curcuma
+Polifenoles naturales,Ácido clorogénico,O=C(/C=C/c1ccc(O)c(O)c1)O[C@@H]1C[C@](O)(C(=O)O)C[C@@H](O)[C@H]1O,Polifenol del cafe
+Ésteres de frutas,Acetato de isoamilo,CC(=O)OCCC(C)C,Aroma de platano
+Ésteres de frutas,Butirato de etilo,CCCC(=O)OCC,Aroma de pina
+Ésteres de frutas,Acetato de bencilo,CC(=O)OCc1ccccc1,Aroma de jazmin
+Ésteres de frutas,Salicilato de metilo,COC(=O)c1ccccc1O,Aroma de gaulteria
+Ésteres de frutas,Antranilato de metilo,COC(=O)c1ccccc1N,Aroma de uva
+Ésteres de frutas,Propionato de etilo,CCOC(=O)CC,Aroma de ron
+Aminas y bases nitrogenadas,Metilamina,CN,Intermediario
+Aminas y bases nitrogenadas,Dimetilamina,CNC,Intermediario
+Aminas y bases nitrogenadas,Trimetilamina,CN(C)C,Olor a pescado
+Aminas y bases nitrogenadas,Anilina,Nc1ccccc1,Colorantes
+Aminas y bases nitrogenadas,Piridina,c1ccncc1,"Solvente, base"
+Aminas y bases nitrogenadas,Etilendiamina,NCCN,"Quelantes, resinas"
+Haloalcanos,Diclorometano,ClCCl,Solvente de extraccion
+Haloalcanos,Cloroformo,ClC(Cl)Cl,Solvente
+Haloalcanos,Tetracloruro de carbono,ClC(Cl)(Cl)Cl,Solvente prohibido
+Haloalcanos,"1,2-Dicloroetano",ClCCCl,Precursor de PVC
+Haloalcanos,Tricloroetileno,ClC=C(Cl)Cl,Desengrasante
+Haloalcanos,Diclorodifluorometano,FC(F)(Cl)Cl,Refrigerante CFC-12
+Compuestos de azufre,Metanotiol,CS,Odorante del gas
+Compuestos de azufre,Etanotiol,CCS,Odorante del gas
+Compuestos de azufre,Dimetilsulfuro,CSC,Aroma marino
+Compuestos de azufre,Dimetilsulfóxido,CS(C)=O,Solvente
+Compuestos de azufre,Tiofeno,c1ccsc1,Heterociclo azufrado
+Compuestos de azufre,Ácido tioglicólico,O=C(O)CS,"Permanentes, depilatorios"
+Heterociclos,Furano,c1ccoc1,Heterociclo oxigenado
+Heterociclos,Pirrol,c1cc[nH]c1,Heterociclo nitrogenado
+Heterociclos,Imidazol,c1c[nH]cn1,"Tampon, farmacos"
+Heterociclos,Tiazol,c1cscn1,"Aromas, vitamina B1"
+Heterociclos,Indol,c1ccc2[nH]ccc2c1,"Aroma floral, triptofano"
+Heterociclos,Quinolina,c1ccc2ncccc2c1,"Colorantes, farmacos"
+Plásticos y plastificantes,Ftalato de dimetilo,COC(=O)c1ccccc1C(=O)OC,Plastificante
+Plásticos y plastificantes,Ftalato de dietilo,CCOC(=O)c1ccccc1C(=O)OCC,Plastificante
+Plásticos y plastificantes,DEHP,CCCCC(CC)COC(=O)c1ccccc1C(=O)OCC(CC)CCCC,Plastificante de PVC
+Plásticos y plastificantes,Bisfenol A,CC(C)(c1ccc(O)cc1)c1ccc(O)cc1,"Policarbonato, resinas"
+Plásticos y plastificantes,Ácido tereftálico,O=C(O)c1ccc(C(=O)O)cc1,Monomero de PET
+Plásticos y plastificantes,Caprolactama,O=C1CCCCCN1,Monomero de nylon 6
+Fármacos cardiovasculares,Propranolol,CC(C)NCC(O)COc1cccc2ccccc12,Betabloqueante
+Fármacos cardiovasculares,Atenolol,CC(C)NCC(O)COc1ccc(CC(N)=O)cc1,Betabloqueante
+Fármacos cardiovasculares,Metoprolol,COCCc1ccc(OCC(O)CNC(C)C)cc1,Betabloqueante
+Fármacos cardiovasculares,Captopril,C[C@H](CS)C(=O)N1CCC[C@H]1C(=O)O,Inhibidor de la ECA
+Fármacos cardiovasculares,Warfarina,CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O,Anticoagulante
+Fármacos cardiovasculares,Nifedipino,COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-],Antihipertensivo
+Moléculas pequeñas y gases,Agua,O,Disolvente universal
+Moléculas pequeñas y gases,Amoníaco,N,Fertilizantes
+Moléculas pequeñas y gases,Dióxido de carbono,O=C=O,Gas de efecto invernadero
+Moléculas pequeñas y gases,Metano,C,Gas natural
+Moléculas pequeñas y gases,Peróxido de hidrogeno,OO,"Oxidante, blanqueador"
+Moléculas pequeñas y gases,Dióxido de azufre,O=S=O,"Conservante, contaminante"
