@@ -36,6 +36,25 @@ Las doce prácticas se pueden recorrer en orden o consultarse de forma aislada.
 
 Las prácticas 00 a 07 por sí solas forman un recorrido completo, que cabe en tres sesiones de 4 h.
 
+## Herramientas
+
+`herramientas/revisar.py` comprueba las cosas mecánicas que se olvidan al terminar un trabajo y que invalidan un resultado o hacen ilegible una figura: ejes sin unidad, columnas que quedaron como texto, figuras guardadas a 100 dpi, incertidumbres con más cifras de las que soportan, residuales con estructura. No juzga el contenido científico.
+
+```python
+!wget -q https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/herramientas/revisar.py
+from revisar import Informe
+
+inf = Informe()
+inf.tabla(df, filas=12, columnas=["nombre", "smiles"])
+inf.figura(fig)
+inf.archivo("calibracion.png", dpi_minimo=300)
+inf.resultado(4.3127, 0.34, "mg/L")     # -> "Reporte el resultado asi: 4.3 ± 0.3 mg/L"
+inf.residuales(x, y - prediccion)
+inf.resumen()
+```
+
+El informe distingue fallos (✗), que hay que corregir, de avisos (!), que conviene mirar. La comprobación de residuales usa la prueba de rachas de Wald–Wolfowitz: si el modelo se desvía de forma sistemática, lo detecta aunque el R² sea alto.
+
 ## Datos
 
 | Archivo | Qué contiene |

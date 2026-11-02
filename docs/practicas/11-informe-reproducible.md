@@ -66,6 +66,25 @@ describe las **decisiones**, no el código línea por línea. Esa es la diferenc
 
 `plt.rcParams` fija los valores por defecto de toda la sesión: tamaño, resolución, tipo de letra, bordes. Se escribe una vez al principio del notebook y todas las figuras lo heredan. Es la diferencia entre un informe y una carpeta de imágenes.
 
+### Comprobar el trabajo con código
+
+Revisar a mano si una figura tiene unidades, si un CSV quedó como texto o si una incertidumbre tiene demasiadas cifras es justo el tipo de tarea que conviene automatizar. El repositorio incluye [`herramientas/revisar.py`](https://github.com/pesco13/Python-para-Quimica/blob/main/herramientas/revisar.py) para eso:
+
+```python
+!wget -q https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/herramientas/revisar.py
+from revisar import Informe
+
+inf = Informe()
+inf.tabla(df, filas_minimas=12, columnas=["nombre", "smiles"])
+inf.figura(fig)
+inf.archivo("fig01_calibracion.png", dpi_minimo=300)
+inf.resultado(4.3127, 0.34, "mg/L")
+inf.residuales(concentracion, residuales)
+inf.resumen()
+```
+
+Separa **fallos**, que invalidan el resultado, de **avisos**, que no bloquean pero casi siempre valen la pena. La comprobación de residuales aplica la prueba de rachas de Wald–Wolfowitz sobre el signo de los residuales ordenados: pocas rachas significan desviación sistemática, que es lo que el R² no detecta.
+
 ## Errores comunes
 
 ### El notebook no corre tras *Reiniciar y ejecutar todo*
