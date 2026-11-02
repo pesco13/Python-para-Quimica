@@ -32,6 +32,60 @@ $$
 
 El cálculo consiste en encontrar los coeficientes $c_{\mu i}$.
 
+### ¿De dónde salen las coordenadas?
+
+Un cálculo cuántico parte de posiciones fijas de los núcleos, así que lo primero que hay que conseguir es una geometría. La del agua que usa la práctica,
+
+```
+O  0.000   0.000   0.000
+H  0.000   0.757   0.587
+H  0.000  -0.757   0.587
+```
+
+no es arbitraria: corresponde a una distancia O–H de 0,958 Å y a un ángulo H–O–H de 104,4°, que son los valores experimentales. Con el oxígeno en el origen y el eje de simetría sobre $z$, cada hidrógeno queda en
+
+$$
+y = r\,\sin\!\left(\frac{\alpha}{2}\right), \qquad
+z = r\,\cos\!\left(\frac{\alpha}{2}\right)
+$$
+
+Hay cuatro maneras de obtener una geometría, y conviene saber cuál se está usando porque la energía depende de ella.
+
+| Origen | Cómo se obtiene | Cuándo conviene |
+|---|---|---|
+| A mano, desde distancias y ángulos | Trigonometría, como arriba | Moléculas de dos o tres átomos |
+| Generada con RDKit | `EmbedMolecule` más `MMFFOptimizeMolecule`, como en la [práctica 06](./06-estructuras-3d-y-conformeros.md) | Cualquier molécula orgánica, para empezar rápido |
+| Tomada de una base de datos | PubChem da conformeros 3D en SDF; el CCCBDB del NIST, geometrías experimentales y calculadas; el PDB, proteínas | Cuando se quiere comparar con la literatura |
+| Optimizada con el propio método | `pyscf.geomopt`, o el módulo equivalente de otro programa | Cuando se van a comparar energías entre moléculas |
+
+Esa última fila es la importante. Una geometría que viene de un campo de fuerza **no** es el mínimo de energía del funcional que usted está empleando, así que la energía que obtenga está algo por encima del mínimo real. Para un primer cálculo da igual; para comparar dos moléculas, no.
+
+### Del SMILES a las coordenadas
+
+El camino habitual es pasar por RDKit y convertir el resultado al formato que espera PySCF, que es una cadena con un átomo por línea:
+
+```python
+from rdkit import Chem
+from rdkit.Chem import AllChem
+
+def coordenadas(smiles, semilla=42):
+    mol = Chem.AddHs(Chem.MolFromSmiles(smiles))
+    AllChem.EmbedMolecule(mol, randomSeed=semilla)
+    AllChem.MMFFOptimizeMolecule(mol)
+    conf = mol.GetConformer()
+    lineas = []
+    for atomo in mol.GetAtoms():
+        p = conf.GetAtomPosition(atomo.GetIdx())
+        lineas.append(f"{atomo.GetSymbol()} {p.x:.4f} {p.y:.4f} {p.z:.4f}")
+    return "; ".join(lineas)
+
+metanol = gto.M(atom=coordenadas("CO"), basis="6-31g", verbose=0)
+```
+
+Dos detalles que hacen falta para que funcione: `AddHs` antes de generar la geometría, porque RDKit no coloca átomos que no existen en el objeto; y `randomSeed` fijo, para que el resultado sea reproducible.
+
+Las unidades de PySCF son **ángstrom** por defecto. Si su archivo está en bohr, pase `unit="Bohr"` a `gto.M`.
+
 ### Hartree–Fock y el ciclo autoconsistente
 
 En Hartree–Fock cada electrón siente a los demás solo como una nube promedio. Esa nube depende de los orbitales que se están buscando, así que el cálculo se hace por rondas. Se propone un juego inicial de orbitales, con ellos se calcula el campo promedio de los electrones, en ese campo se obtienen orbitales nuevos y se repite hasta que la energía y los orbitales dejan de cambiar.
