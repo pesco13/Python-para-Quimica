@@ -51,10 +51,10 @@ Cada notebook termina con ejercicios resueltos y con celdas de autocomprobación
 
 | Archivo | Qué contiene |
 |---|---|
-| [`compuestos_industriales.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/compuestos_industriales.csv) | 25 compuestos de uso industrial con su SMILES |
-| [`compuestos_familias.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/compuestos_familias.csv) | 150 compuestos repartidos en 25 familias temáticas |
-| [`pubchem_respaldo.csv`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/pubchem_respaldo.csv) | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
-| [`generar_datos.py`](https://github.com/pesco13/Python-para-Quimica/blob/main/datos/generar_datos.py) | Genera series sintéticas de calibración y de cinética a partir de una semilla |
+| [`compuestos_industriales.csv`](https://pesco13.github.io/Python-para-Quimica/datos/compuestos_industriales.csv) | 25 compuestos de uso industrial con su SMILES |
+| [`compuestos_familias.csv`](https://pesco13.github.io/Python-para-Quimica/datos/compuestos_familias.csv) | 150 compuestos repartidos en 25 familias temáticas |
+| [`pubchem_respaldo.csv`](https://pesco13.github.io/Python-para-Quimica/datos/pubchem_respaldo.csv) | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
+| [`generar_datos.py`](https://pesco13.github.io/Python-para-Quimica/datos/generar_datos.py) | Genera series sintéticas de calibración y de cinética a partir de una semilla |
 
 `generar_datos.py` produce conjuntos de datos sintéticos de calibración y de cinética a partir de un número entero que actúa de semilla: el mismo número da siempre los mismos valores, y números distintos dan series distintas con el mismo comportamiento físico. Sirve para practicar un ajuste sin depender de haber medido antes en el laboratorio.
 

@@ -71,7 +71,7 @@ describe las **decisiones**, no el código línea por línea. Esa es la diferenc
 Revisar a mano si una figura tiene unidades, si un CSV quedó como texto o si una incertidumbre tiene demasiadas cifras es justo el tipo de tarea que conviene automatizar. El repositorio incluye [`herramientas/revisar.py`](https://github.com/pesco13/Python-para-Quimica/blob/main/herramientas/revisar.py) para eso:
 
 ```python
-!wget -q https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/herramientas/revisar.py
+!wget -q https://pesco13.github.io/Python-para-Quimica/herramientas/revisar.py
 from revisar import Informe
 
 inf = Informe()
