@@ -3,7 +3,7 @@ title: "08 · Gráficas para química"
 sidebar_label: "08 · Gráficas para química"
 description: "numpy, la anatomía de una figura de matplotlib, barras de error y qué debe llevar una gráfica de informe."
 sidebar_position: 9
-slug: graficas-para-quimica
+slug: 08-graficas-para-quimica
 ---
 
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/08_Graficas_para_quimica.ipynb)

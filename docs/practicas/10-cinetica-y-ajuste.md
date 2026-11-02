@@ -3,7 +3,7 @@ title: "10 · Cinética química y ajuste no lineal"
 sidebar_label: "10 · Cinética y ajuste"
 description: "Órdenes de reacción, por qué linealizar distorsiona, curve_fit, comparación de modelos y ecuación de Arrhenius."
 sidebar_position: 11
-slug: cinetica-y-ajuste
+slug: 10-cinetica-y-ajuste
 ---
 
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/10_Cinetica_y_ajuste.ipynb)

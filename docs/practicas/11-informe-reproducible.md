@@ -3,7 +3,7 @@ title: "11 · El informe final reproducible"
 sidebar_label: "11 · Informe reproducible"
 description: "Estructura de carpetas, nombres de archivo, registro del entorno, estilo común de figuras y cómo se escribe un método."
 sidebar_position: 12
-slug: informe-reproducible
+slug: 11-informe-reproducible
 ---
 
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/11_Informe_reproducible.ipynb)
