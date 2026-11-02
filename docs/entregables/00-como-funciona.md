@@ -84,7 +84,7 @@ Los datos de calibración y de cinética **se generan con su número y son disti
 1. Trabaje sobre su copia en Drive (*Archivo › Guardar una copia en Drive*).
 2. Renombre el archivo como `S03_Apellido_Nombre.ipynb`, con el número de sesión en dos dígitos, sin espacios y sin tildes.
 3. *Compartir › Acceso general › Cualquier persona con el enlace › Lector*. Sin ese paso el enlace no abre y la entrega no cuenta.
-4. Pegue el enlace en el formulario del curso antes de que termine la sesión.
+4. Suba el enlace a la tarea correspondiente en el aula virtual de la asignatura, antes de que termine la sesión. Lo que se entrega es el **enlace**, no el archivo: así el profesor ve siempre la última versión y usted no tiene que volver a exportar nada.
 5. Antes de entregar, use *Entorno de ejecución › Reiniciar y ejecutar todo*. Si el notebook no corre de arriba abajo sin intervención, todavía no está listo.
 
 Ese último punto es el que más entregas arruina. Un notebook que solo funciona si se ejecutan las celdas en cierto orden no es reproducible, y la primera línea de la rúbrica lo penaliza.
@@ -114,7 +114,7 @@ No declarar el uso sí es una falta. Usarlo y declararlo no resta ni un punto.
 
 ## Entregas fuera de plazo
 
-Hasta 48 horas después: se califica sobre el 80 %. Más allá, solo con justificación documentada. Si durante la sesión se queda atascado, avise en el momento: es mucho más fácil desatascar un error en clase que recuperar una entrega perdida.
+Hasta 48 horas después: se califica sobre el 80 %, salvo que la normativa de la asignatura diga otra cosa. Más allá, solo con justificación documentada. Si durante la sesión se queda atascado, avise en el momento: es mucho más fácil desatascar un error en clase que recuperar una entrega perdida.
 
 ## Antes de la primera sesión
 
