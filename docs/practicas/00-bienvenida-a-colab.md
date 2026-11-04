@@ -35,6 +35,30 @@ La máquina virtual se apaga después de un rato sin uso o cuando se reinicia el
 
 El notebook no se pierde si está guardado en su Drive. Por eso conviene empezar siempre con *Archivo › Guardar una copia en Drive*.
 
+### ¿Dónde caen los archivos que se descargan?
+
+Varias prácticas empiezan con una línea como esta:
+
+```python
+!wget -O generar_datos.py https://pesco13.github.io/Python-para-Quimica/datos/generar_datos.py
+```
+
+El signo de admiración indica que lo que sigue no es Python sino una orden del sistema, y `wget` es el programa que descarga un archivo. El archivo cae en la **carpeta de trabajo de la sesión**, que en Colab es `/content`. Puede verlo en el icono de carpeta de la barra izquierda, y comprobarlo desde el notebook:
+
+```python
+import os
+print(os.getcwd())                 # /content
+print(os.listdir())                # lo que hay ahí ahora mismo
+```
+
+Como esa carpeta vive en la máquina temporal, el archivo desaparece al cerrar la sesión: **hay que volver a descargarlo cada vez que se reinicia el entorno**. No es un problema, es una línea.
+
+Si la descarga falla, `wget` no detiene el notebook: simplemente no crea el archivo, y el error aparece después como `ModuleNotFoundError` al intentar importarlo. Por eso conviene comprobar el resultado:
+
+```python
+print(os.path.getsize("generar_datos.py"), "bytes")
+```
+
 ### Celdas de código y celdas de texto
 
 Las celdas de texto usan Markdown, un formato sencillo para dar estilo:
@@ -65,6 +89,10 @@ Falta cerrar un paréntesis o unas comillas, o se escribió una coma decimal (`2
 ### `IndentationError: unexpected indent`
 
 Hay espacios de más al inicio de la línea. En Python la sangría tiene significado, así que borre esos espacios o alinee la línea con las demás del mismo bloque.
+
+### `ModuleNotFoundError` después de un `wget`
+
+La descarga no funcionó y el archivo no existe, aunque la celda del `wget` no diera error. Compruebe con `os.listdir()` que el archivo está, y vuelva a ejecutar la descarga sin `-q` para ver qué responde el servidor.
 
 ### Los cambios desaparecieron
 

@@ -5,7 +5,7 @@ No corrige el contenido cientifico: verifica las cosas mecanicas que se
 olvidan y que invalidan un resultado o hacen ilegible una figura. Pensado
 para correrse al final de un notebook, antes de dar el trabajo por terminado.
 
-    !wget -q https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/herramientas/revisar.py
+    !wget -O revisar.py https://pesco13.github.io/Python-para-Quimica/herramientas/revisar.py
     from revisar import Informe
 
     inf = Informe()

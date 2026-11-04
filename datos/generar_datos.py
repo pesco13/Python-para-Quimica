@@ -10,7 +10,11 @@ haber medido antes en el laboratorio.
 
 Uso en Google Colab
 -------------------
-    !wget -q https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/datos/generar_datos.py
+El archivo se descarga en la carpeta de trabajo de la sesion (/content en
+Colab) y desaparece cuando la sesion se cierra. Hay que volver a bajarlo
+cada vez que se reinicia el entorno.
+
+    !wget -O generar_datos.py https://pesco13.github.io/Python-para-Quimica/datos/generar_datos.py
     from generar_datos import calibracion, cinetica, mi_familia, mi_asignacion
 
     NUMERO = 7                      # la semilla que quiera
@@ -34,10 +38,7 @@ import pandas as pd
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RUTA_FAMILIAS = os.path.join(AQUI, "compuestos_familias.csv")
-URL_FAMILIAS = (
-    "https://raw.githubusercontent.com/pesco13/Python-para-Quimica/"
-    "main/datos/compuestos_familias.csv"
-)
+URL_FAMILIAS = "https://pesco13.github.io/Python-para-Quimica/datos/compuestos_familias.csv"
 
 # Analitos que se pueden medir por absorcion UV-Vis, con su longitud de onda
 # de trabajo y su absortividad molar aproximada. Son valores didacticos.
