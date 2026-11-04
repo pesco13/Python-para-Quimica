@@ -1,12 +1,12 @@
 ---
-title: "09 · Curva de calibración y error experimental"
-sidebar_label: "09 · Calibración y error"
+title: "04 · Curva de calibración y error experimental"
+sidebar_label: "04 · Calibración y error"
 description: "Ley de Beer, mínimos cuadrados, residuales, incertidumbre del resultado, t de Student, LOD y LOQ."
-sidebar_position: 10
-slug: 09-calibracion-y-error
+sidebar_position: 5
+slug: 04-calibracion-y-error
 ---
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/09_Calibracion_y_error.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/04_Calibracion_y_error.ipynb)
 
 El código de esta práctica está en Colab. Esta página explica la teoría que la acompaña, reúne los errores más frecuentes y propone retos para después de clase.
 

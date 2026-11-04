@@ -11,16 +11,16 @@ Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de
 | N.º | Notebook |
 |---|---|
 | 00 | [Bienvenida a Colab](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/00_Bienvenida_a_Colab.ipynb) |
-| 01 | [Python basico para quimica](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb) |
+| 01 | [Python básico para química](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/01_Python_basico_para_quimica.ipynb) |
 | 02 | [Tablas con pandas](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/02_Tablas_con_pandas.ipynb) |
-| 03 | [Moleculas con RDKit](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/03_Moleculas_con_RDKit.ipynb) |
-| 04 | [PubChem desde Python](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/04_PubChem_desde_Python.ipynb) |
-| 05 | [Similitud y espacio quimico](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb) |
-| 06 | [Estructuras 3D y conformeros](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/06_Estructuras_3D_y_conformeros.ipynb) |
-| 07 | [Primer calculo cuantico PySCF](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb) |
-| 08 | [Graficas para quimica](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/08_Graficas_para_quimica.ipynb) |
-| 09 | [Calibracion y error experimental](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/09_Calibracion_y_error.ipynb) |
-| 10 | [Cinetica y ajuste no lineal](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/10_Cinetica_y_ajuste.ipynb) |
+| 03 | [Gráficas para química](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/03_Graficas_para_quimica.ipynb) |
+| 04 | [Calibración y error](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/04_Calibracion_y_error.ipynb) |
+| 05 | [Cinética y ajuste](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/05_Cinetica_y_ajuste.ipynb) |
+| 06 | [Moléculas con RDKit](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/06_Moleculas_con_RDKit.ipynb) |
+| 07 | [PubChem desde Python](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/07_PubChem_desde_Python.ipynb) |
+| 08 | [Similitud y espacio químico](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/08_Similitud_y_espacio_quimico.ipynb) |
+| 09 | [Estructuras 3D y conformeros](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/09_Estructuras_3D_y_conformeros.ipynb) |
+| 10 | [Primer cálculo cuántico con PySCF](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/10_Primer_calculo_cuantico_PySCF.ipynb) |
 | 11 | [Informe reproducible](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/11_Informe_reproducible.ipynb) |
 
 Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*), y con celdas de autocomprobación (`assert`) que avisan si algo quedó mal.
@@ -30,11 +30,11 @@ Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*), y
 Las doce prácticas se pueden recorrer en orden o consultarse de forma aislada.
 
 * **Primeros pasos** (00 a 02): entorno, lenguaje y tablas.
-* **Datos de laboratorio** (08 a 10): gráficas, calibración y cinética.
-* **Moléculas** (03 a 07): estructura, bases de datos, similitud, 3D y estructura electrónica.
+* **Datos de laboratorio** (03 a 05): gráficas, calibración y cinética.
+* **Moléculas** (06 a 10): estructura, bases de datos, similitud, 3D y estructura electrónica.
 * **Cierre** (11): trabajo reproducible.
 
-Las prácticas 00 a 07 por sí solas forman un recorrido completo, que cabe en tres sesiones de 4 h.
+El número indica el orden: van de menor a mayor complejidad y cada bloque supone los anteriores. Los bloques de laboratorio y de moléculas parten ambos de las prácticas 00 a 02, así que pueden recorrerse por separado.
 
 ## Herramientas
 
@@ -59,7 +59,7 @@ El informe distingue fallos (✗), que hay que corregir, de avisos (!), que conv
 
 | Archivo | Qué contiene |
 |---|---|
-| `datos/compuestos_industriales.csv` | 25 compuestos de uso industrial con su SMILES. Es el conjunto de las prácticas 02 a 07 |
+| `datos/compuestos_industriales.csv` | 25 compuestos de uso industrial con su SMILES. Es el conjunto que usan las prácticas 02 y 06 a 10 |
 | `datos/compuestos_familias.csv` | 150 compuestos repartidos en 25 familias temáticas |
 | `datos/pubchem_respaldo.csv` | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
 | `datos/generar_datos.py` | Genera series sintéticas de calibración y de cinética a partir de una semilla |

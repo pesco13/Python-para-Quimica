@@ -17,14 +17,14 @@ El código de cada práctica se trabaja en Google Colab, así que solo se necesi
 | 00 | [Bienvenida a Colab](./practicas/00-bienvenida-a-colab.md) | Notebooks, celdas e instalación de bibliotecas |
 | 01 | [Python básico para química](./practicas/01-python-basico-para-quimica.md) | Variables, listas, diccionarios, funciones |
 | 02 | [Tablas con pandas](./practicas/02-tablas-con-pandas.md) | Leer, filtrar, agrupar y graficar datos |
-| 03 | [Moléculas con RDKit](./practicas/03-moleculas-con-rdkit.md) | SMILES, descriptores, regla de Lipinski |
-| 04 | [PubChem desde Python](./practicas/04-pubchem-desde-python.md) | Consultar una base de datos química por API |
-| 05 | [Similitud y espacio químico](./practicas/05-similitud-y-espacio-quimico.md) | Huellas moleculares, Tanimoto, PCA |
-| 06 | [Estructuras 3D y conformeros](./practicas/06-estructuras-3d-y-conformeros.md) | Geometrías 3D y campo de fuerza MMFF94 |
-| 07 | [Primer cálculo cuántico con PySCF](./practicas/07-primer-calculo-cuantico-pyscf.md) | Hartree–Fock, DFT, HOMO/LUMO |
-| 08 | [Gráficas para química](./practicas/08-graficas-para-quimica.md) | numpy, figuras con calidad de informe |
-| 09 | [Calibración y error](./practicas/09-calibracion-y-error.md) | Regresión, incertidumbre, LOD y LOQ |
-| 10 | [Cinética y ajuste](./practicas/10-cinetica-y-ajuste.md) | Orden de reacción, `curve_fit`, Arrhenius |
+| 03 | [Gráficas para química](./practicas/03-graficas-para-quimica.md) | numpy, figuras con calidad de informe |
+| 04 | [Calibración y error](./practicas/04-calibracion-y-error.md) | Regresión, incertidumbre, LOD y LOQ |
+| 05 | [Cinética y ajuste](./practicas/05-cinetica-y-ajuste.md) | Orden de reacción, `curve_fit`, Arrhenius |
+| 06 | [Moléculas con RDKit](./practicas/06-moleculas-con-rdkit.md) | SMILES, descriptores, regla de Lipinski |
+| 07 | [PubChem desde Python](./practicas/07-pubchem-desde-python.md) | Consultar una base de datos química por API |
+| 08 | [Similitud y espacio químico](./practicas/08-similitud-y-espacio-quimico.md) | Huellas moleculares, Tanimoto, PCA |
+| 09 | [Estructuras 3D y conformeros](./practicas/09-estructuras-3d-y-conformeros.md) | Geometrías 3D y campo de fuerza MMFF94 |
+| 10 | [Primer cálculo cuántico con PySCF](./practicas/10-primer-calculo-cuantico-pyscf.md) | Hartree–Fock, DFT, HOMO/LUMO |
 | 11 | [Informe reproducible](./practicas/11-informe-reproducible.md) | Entorno, estructura y métodos |
 
 ## Organización sugerida
@@ -32,11 +32,11 @@ El código de cada práctica se trabaja en Google Colab, así que solo se necesi
 Las doce prácticas están pensadas para recorrerse en orden, pero cada una se sostiene por sí sola y puede consultarse de forma aislada.
 
 - **Primeros pasos** (00 a 02): el entorno, el lenguaje y las tablas.
-- **Datos de laboratorio** (08 a 10): gráficas, ajuste de una calibración y de una cinética.
-- **Moléculas** (03 a 07): estructura, bases de datos, similitud, geometría 3D y estructura electrónica.
+- **Datos de laboratorio** (03 a 05): gráficas, ajuste de una calibración y de una cinética.
+- **Moléculas** (06 a 10): estructura, bases de datos, similitud, geometría 3D y estructura electrónica.
 - **Cierre** (11): cómo dejar un trabajo que otra persona pueda repetir.
 
-El bloque de datos de laboratorio solo necesita las prácticas 00 a 02; el de moléculas, además, la 03. Si dispone de poco tiempo, las prácticas 00 a 07 forman un recorrido completo por sí mismas.
+El número de cada práctica indica su orden: están puestas de menor a mayor complejidad y cada una supone las anteriores. El bloque de datos de laboratorio necesita solo las prácticas 00 a 02; el de moléculas parte del mismo punto y no depende de las de laboratorio, así que puede recorrerse por separado.
 
 Cada notebook termina con ejercicios resueltos y con celdas de autocomprobación (`assert`). Los retos de este sitio son distintos y no tienen solución publicada.
 

@@ -41,6 +41,27 @@ const config = {
     locales: ['es'],
   },
 
+  plugins: [
+    [
+      // En noviembre de 2026 las practicas se renumeraron para que el numero
+      // coincidiera con el orden del curso. Estas redirecciones mantienen
+      // vivos los enlaces anteriores.
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {from: '/practicas/03-moleculas-con-rdkit', to: '/practicas/06-moleculas-con-rdkit'},
+          {from: '/practicas/04-pubchem-desde-python', to: '/practicas/07-pubchem-desde-python'},
+          {from: '/practicas/05-similitud-y-espacio-quimico', to: '/practicas/08-similitud-y-espacio-quimico'},
+          {from: '/practicas/06-estructuras-3d-y-conformeros', to: '/practicas/09-estructuras-3d-y-conformeros'},
+          {from: '/practicas/07-primer-calculo-cuantico-pyscf', to: '/practicas/10-primer-calculo-cuantico-pyscf'},
+          {from: '/practicas/08-graficas-para-quimica', to: '/practicas/03-graficas-para-quimica'},
+          {from: '/practicas/09-calibracion-y-error', to: '/practicas/04-calibracion-y-error'},
+          {from: '/practicas/10-cinetica-y-ajuste', to: '/practicas/05-cinetica-y-ajuste'},
+        ],
+      },
+    ],
+  ],
+
   themes: [
     [
       // Buscador que funciona sin cuenta de Algolia: construye el indice

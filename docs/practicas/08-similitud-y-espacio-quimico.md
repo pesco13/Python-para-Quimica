@@ -1,12 +1,12 @@
 ---
-title: "05 · Similitud molecular y espacio químico"
-sidebar_label: "05 · Similitud y espacio químico"
+title: "08 · Similitud molecular y espacio químico"
+sidebar_label: "08 · Similitud y espacio químico"
 description: "Cómo se construye una huella de Morgan, de dónde sale el coeficiente de Tanimoto y cómo leer un mapa de PCA."
-sidebar_position: 6
-slug: 05-similitud-y-espacio-quimico
+sidebar_position: 9
+slug: 08-similitud-y-espacio-quimico
 ---
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/05_Similitud_y_espacio_quimico.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/08_Similitud_y_espacio_quimico.ipynb)
 
 El código de esta práctica está en Colab. Esta página explica la teoría que la acompaña, reúne los errores más frecuentes y propone retos para después de clase.
 

@@ -1,12 +1,12 @@
 ---
-title: "07 · Primer cálculo de química cuántica con PySCF"
-sidebar_label: "07 · Química cuántica con PySCF"
+title: "10 · Primer cálculo de química cuántica con PySCF"
+sidebar_label: "10 · Química cuántica con PySCF"
 description: "Las aproximaciones detrás de Hartree–Fock y DFT, cómo elegir un conjunto base y cómo leer las energías."
-sidebar_position: 8
-slug: 07-primer-calculo-cuantico-pyscf
+sidebar_position: 11
+slug: 10-primer-calculo-cuantico-pyscf
 ---
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/07_Primer_calculo_cuantico_PySCF.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/10_Primer_calculo_cuantico_PySCF.ipynb)
 
 El código de esta práctica está en Colab. Esta página explica la teoría que la acompaña, reúne los errores más frecuentes y propone retos para después de clase.
 
@@ -54,7 +54,7 @@ Hay cuatro maneras de obtener una geometría, y conviene saber cuál se está us
 | Origen | Cómo se obtiene | Cuándo conviene |
 |---|---|---|
 | A mano, desde distancias y ángulos | Trigonometría, como arriba | Moléculas de dos o tres átomos |
-| Generada con RDKit | `EmbedMolecule` más `MMFFOptimizeMolecule`, como en la [práctica 06](./06-estructuras-3d-y-conformeros.md) | Cualquier molécula orgánica, para empezar rápido |
+| Generada con RDKit | `EmbedMolecule` más `MMFFOptimizeMolecule`, como en la [práctica 09](./09-estructuras-3d-y-conformeros.md) | Cualquier molécula orgánica, para empezar rápido |
 | Tomada de una base de datos | PubChem da conformeros 3D en SDF; el CCCBDB del NIST, geometrías experimentales y calculadas; el PDB, proteínas | Cuando se quiere comparar con la literatura |
 | Optimizada con el propio método | `pyscf.geomopt`, o el módulo equivalente de otro programa | Cuando se van a comparar energías entre moléculas |
 
@@ -140,7 +140,7 @@ La molécula tiene un número impar de electrones (es un radical, como el OH) y 
 
 ### `SCF not converged`
 
-El ciclo no se estabilizó dentro del número de rondas permitido. Pasa a menudo con geometrías malas o con metales. Parta de una geometría razonable (práctica 06), aumente las rondas con `mf.max_cycle = 200` o use `mf.level_shift = 0.3`.
+El ciclo no se estabilizó dentro del número de rondas permitido. Pasa a menudo con geometrías malas o con metales. Parta de una geometría razonable (práctica 09), aumente las rondas con `mf.max_cycle = 200` o use `mf.level_shift = 0.3`.
 
 ### Las energías no tienen sentido
 
@@ -157,7 +157,7 @@ La base o la molécula son demasiado grandes para la memoria o el tiempo disponi
 ## Retos adicionales
 
 1. Calcule la energía del radical hidroxilo (OH) con `spin=1` y `scf.UHF`. ¿Qué pasa si intenta usar `scf.RHF`?
-2. Calcule con B3LYP/6-31G* la diferencia de energía entre el etanol y el dimetil éter (isómeros C₂H₆O), con geometrías generadas en la práctica 06. ¿Cuál es más estable y por cuántos kJ/mol?
+2. Calcule con B3LYP/6-31G* la diferencia de energía entre el etanol y el dimetil éter (isómeros C₂H₆O), con geometrías generadas en la práctica 09. ¿Cuál es más estable y por cuántos kJ/mol?
 3. Repita la curva de energía potencial del H₂ con `dft.UKS` y compárela con la de `RKS`. Para que UKS se separe de la solución restringida, parta de una densidad inicial asimétrica. Explique por qué solo UKS se acerca al valor correcto a distancias grandes.
 4. Calcule el momento dipolar del CO₂ y del H₂O y explique la diferencia a partir de la geometría de cada molécula.
 

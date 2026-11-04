@@ -1,12 +1,12 @@
 ---
-title: "04 · Consultar PubChem desde Python"
-sidebar_label: "04 · PubChem desde Python"
+title: "07 · Consultar PubChem desde Python"
+sidebar_label: "07 · PubChem desde Python"
 description: "Cómo se comunica Python con un servidor, cómo leer las respuestas de PubChem y cómo consultar sin saturarlo."
-sidebar_position: 5
-slug: 04-pubchem-desde-python
+sidebar_position: 8
+slug: 07-pubchem-desde-python
 ---
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/04_PubChem_desde_Python.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/07_PubChem_desde_Python.ipynb)
 
 El código de esta práctica está en Colab. Esta página explica la teoría que la acompaña, reúne los errores más frecuentes y propone retos para después de clase.
 
@@ -93,7 +93,7 @@ r = requests.post(f"{BASE}/compound/smiles/property/MolecularFormula/JSON",
 ## Retos adicionales
 
 1. Para cinco compuestos del CSV del curso, obtenga el CID y el InChIKey a partir del SMILES (no del nombre), usando POST.
-2. Para diez compuestos, compare el XLogP de PubChem con el log P de RDKit (práctica 03). Haga un gráfico de dispersión y comente las diferencias.
+2. Para diez compuestos, compare el XLogP de PubChem con el log P de RDKit (práctica 06). Haga un gráfico de dispersión y comente las diferencias.
 3. Consulte los sinónimos de la aspirina (`/compound/name/aspirin/synonyms/JSON`) y muestre los diez primeros. ¿Por qué buscar por nombre puede ser ambiguo?
 4. Escriba una función que consulte una lista de nombres y devuelva dos tablas: los compuestos encontrados y los que fallaron, con el código de error de cada uno.
 

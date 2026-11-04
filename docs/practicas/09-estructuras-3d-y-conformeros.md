@@ -1,12 +1,12 @@
 ---
-title: "06 · Estructuras 3D y conformeros"
-sidebar_label: "06 · Estructuras 3D"
+title: "09 · Estructuras 3D y conformeros"
+sidebar_label: "09 · Estructuras 3D"
 description: "Qué calcula un campo de fuerza, cómo se generan los conformeros y cuántas moléculas hay en cada uno a temperatura ambiente."
-sidebar_position: 7
-slug: 06-estructuras-3d-y-conformeros
+sidebar_position: 10
+slug: 09-estructuras-3d-y-conformeros
 ---
 
-[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/06_Estructuras_3D_y_conformeros.ipynb)
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/09_Estructuras_3D_y_conformeros.ipynb)
 
 El código de esta práctica está en Colab. Esta página explica la teoría que la acompaña, reúne los errores más frecuentes y propone retos para después de clase.
 
