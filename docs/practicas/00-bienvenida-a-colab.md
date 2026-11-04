@@ -43,12 +43,18 @@ Varias prácticas empiezan con una línea como esta:
 !wget -O generar_datos.py https://pesco13.github.io/Python-para-Quimica/datos/generar_datos.py
 ```
 
-El signo de admiración indica que lo que sigue no es Python sino una orden del sistema, y `wget` es el programa que descarga un archivo. El archivo cae en la **carpeta de trabajo de la sesión**, que en Colab es `/content`. Puede verlo en el icono de carpeta de la barra izquierda, y comprobarlo desde el notebook:
+El signo de admiración indica que lo que sigue no es Python sino una orden del sistema, y `wget` es el programa que descarga un archivo. Dos cosas importantes sobre esa línea:
+
+- **Va entera en un solo renglón.** `wget` toma la dirección como último argumento; si la dirección queda en la línea de abajo, no descarga nada.
+- **Sin `-q`.** Esa opción silencia la salida, incluidos los errores, así que una descarga fallida parece exitosa.
+
+El archivo cae en la **carpeta de trabajo de la sesión**, que en Colab es `/content`. Para verlo en el icono de carpeta de la barra izquierda hay que pulsar el botón de **refrescar** de ese panel: Colab no lo actualiza solo, y esa es la causa más frecuente de «no veo el archivo» cuando en realidad sí se descargó. Lo más seguro es comprobarlo desde el propio notebook:
 
 ```python
 import os
-print(os.getcwd())                 # /content
-print(os.listdir())                # lo que hay ahí ahora mismo
+print("Carpeta de trabajo:", os.getcwd())          # /content
+print("Archivos:", sorted(os.listdir()))
+print("Tamaño:", os.path.getsize("generar_datos.py"), "bytes")
 ```
 
 Como esa carpeta vive en la máquina temporal, el archivo desaparece al cerrar la sesión: **hay que volver a descargarlo cada vez que se reinicia el entorno**. No es un problema, es una línea.
