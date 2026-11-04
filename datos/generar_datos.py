@@ -3,7 +3,7 @@ Genera series sinteticas de datos de laboratorio para practicar ajustes.
 
 Produce una curva de calibracion UV-Vis y un seguimiento cinetico a cuatro
 temperaturas a partir de un numero entero que actua de semilla. El mismo
-numero da siempre los mismos valores, y numeros distintos dan series
+numero da siempre los mismos valores y numeros distintos dan series
 distintas con el mismo comportamiento fisico. Util para practicar una
 regresion, un ajuste no lineal o una grafica de Arrhenius sin depender de
 haber medido antes en el laboratorio.

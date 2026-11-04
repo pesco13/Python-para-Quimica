@@ -43,12 +43,12 @@ Varias prácticas empiezan con una línea como esta:
 !wget -O generar_datos.py https://pesco13.github.io/Python-para-Quimica/datos/generar_datos.py
 ```
 
-El signo de admiración indica que lo que sigue no es Python sino una orden del sistema, y `wget` es el programa que descarga un archivo. Dos cosas importantes sobre esa línea:
+El signo de admiración indica que lo que sigue no es Python sino una orden del sistema y `wget` es el programa que descarga un archivo. Dos cosas importantes sobre esa línea:
 
 - **Va entera en un solo renglón.** `wget` toma la dirección como último argumento; si la dirección queda en la línea de abajo, no descarga nada.
 - **Sin `-q`.** Esa opción silencia la salida, incluidos los errores, así que una descarga fallida parece exitosa.
 
-El archivo cae en la **carpeta de trabajo de la sesión**, que en Colab es `/content`. Para verlo en el icono de carpeta de la barra izquierda hay que pulsar el botón de **refrescar** de ese panel: Colab no lo actualiza solo, y esa es la causa más frecuente de «no veo el archivo» cuando en realidad sí se descargó. Lo más seguro es comprobarlo desde el propio notebook:
+El archivo cae en la **carpeta de trabajo de la sesión**, que en Colab es `/content`. Para verlo en el icono de carpeta de la barra izquierda hay que pulsar el botón de **refrescar** de ese panel: Colab no lo actualiza solo y esa es la causa más frecuente de «no veo el archivo» cuando en realidad sí se descargó. Lo más seguro es comprobarlo desde el propio notebook:
 
 ```python
 import os
@@ -59,7 +59,7 @@ print("Tamaño:", os.path.getsize("generar_datos.py"), "bytes")
 
 Como esa carpeta vive en la máquina temporal, el archivo desaparece al cerrar la sesión: **hay que volver a descargarlo cada vez que se reinicia el entorno**. No es un problema, es una línea.
 
-Si la descarga falla, `wget` no detiene el notebook: simplemente no crea el archivo, y el error aparece después como `ModuleNotFoundError` al intentar importarlo. Por eso conviene comprobar el resultado:
+Si la descarga falla, `wget` no detiene el notebook: simplemente no crea el archivo y el error aparece después como `ModuleNotFoundError` al intentar importarlo. Por eso conviene comprobar el resultado:
 
 ```python
 print(os.path.getsize("generar_datos.py"), "bytes")
@@ -98,7 +98,7 @@ Hay espacios de más al inicio de la línea. En Python la sangría tiene signifi
 
 ### `ModuleNotFoundError` después de un `wget`
 
-La descarga no funcionó y el archivo no existe, aunque la celda del `wget` no diera error. Compruebe con `os.listdir()` que el archivo está, y vuelva a ejecutar la descarga sin `-q` para ver qué responde el servidor.
+La descarga no funcionó y el archivo no existe, aunque la celda del `wget` no diera error. Compruebe con `os.listdir()` que el archivo está y vuelva a ejecutar la descarga sin `-q` para ver qué responde el servidor.
 
 ### Los cambios desaparecieron
 

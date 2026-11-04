@@ -20,7 +20,7 @@ El código de esta práctica está en Colab. Esta página explica la teoría que
 | Reproducible | Otra persona, con sus datos y su código | Además: datos accesibles, versiones anotadas, orden de ejecución claro |
 | Replicable | Otra persona, desde cero | Además: el método descrito con suficiente detalle |
 
-El objetivo razonable para un trabajo de curso es el nivel intermedio. Los dos obstáculos habituales son el notebook que solo funciona si se ejecutan las celdas en un orden que solo su autor conoce, y el archivo de datos que estaba en el escritorio de un computador concreto.
+El objetivo razonable para un trabajo de curso es el nivel intermedio. Los dos obstáculos habituales son el notebook que solo funciona si se ejecutan las celdas en un orden que solo su autor conoce y el archivo de datos que estaba en el escritorio de un computador concreto.
 
 ### La estructura de carpetas
 
@@ -33,7 +33,7 @@ mi_informe/
 └── README.md           qué es esto y cómo se corre
 ```
 
-La regla que sostiene todo: **los datos de entrada no se tocan**. Si hay que corregir algo, lo corrige el código y escribe el resultado en `resultados/`. Así siempre se puede volver al punto de partida, y la corrección queda documentada en el propio código en vez de en la memoria de alguien.
+La regla que sostiene todo: **los datos de entrada no se tocan**. Si hay que corregir algo, lo corrige el código y escribe el resultado en `resultados/`. Así siempre se puede volver al punto de partida y la corrección queda documentada en el propio código en vez de en la memoria de alguien.
 
 ### Nombres de archivo
 

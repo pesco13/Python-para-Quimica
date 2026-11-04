@@ -49,7 +49,7 @@ y = r\,\sin\!\left(\frac{\alpha}{2}\right), \qquad
 z = r\,\cos\!\left(\frac{\alpha}{2}\right)
 $$
 
-Hay cuatro maneras de obtener una geometría, y conviene saber cuál se está usando porque la energía depende de ella.
+Hay cuatro maneras de obtener una geometría y conviene saber cuál se está usando porque la energía depende de ella.
 
 | Origen | Cómo se obtiene | Cuándo conviene |
 |---|---|---|
@@ -102,7 +102,7 @@ $$
 
 Es menos del 1 % de la energía total, pero es del mismo tamaño que las energías de enlace y de reacción, así que en química importa mucho.
 
-La teoría del funcional de la densidad (DFT) calcula la energía a partir de la densidad electrónica e incluye la correlación de forma aproximada mediante un funcional. B3LYP, el del notebook, es un funcional híbrido porque mezcla una parte de Hartree–Fock. Hay cientos de funcionales, y elegir uno es parte de diseñar el cálculo.
+La teoría del funcional de la densidad (DFT) calcula la energía a partir de la densidad electrónica e incluye la correlación de forma aproximada mediante un funcional. B3LYP, el del notebook, es un funcional híbrido porque mezcla una parte de Hartree–Fock. Hay cientos de funcionales y elegir uno es parte de diseñar el cálculo.
 
 ### Conjuntos base
 
@@ -152,7 +152,7 @@ Una energía B3LYP/6-31G* y otra HF/cc-pVDZ no se pueden comparar. Calcule todas
 
 ### La sesión de Colab se cae o tarda demasiado
 
-La base o la molécula son demasiado grandes para la memoria o el tiempo disponibles. Pruebe primero con una base pequeña (STO-3G) y amplíela después, y use moléculas con pocos átomos pesados.
+La base o la molécula son demasiado grandes para la memoria o el tiempo disponibles. Pruebe primero con una base pequeña (STO-3G) y amplíela después y use moléculas con pocos átomos pesados.
 
 ## Retos adicionales
 

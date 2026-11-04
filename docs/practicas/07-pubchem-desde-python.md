@@ -61,7 +61,7 @@ Muchas propiedades de PubChem, como XLogP o TPSA, las calcula un programa; no so
 
 ### Consultar sin saturar el servidor
 
-PubChem pide no pasar de 5 consultas por segundo, y quien lo supera puede quedar bloqueado un rato. Guarde los resultados en un CSV para no repetir las mismas consultas en cada sesión. Si necesita datos de muchos compuestos, pida varios a la vez separando los CID con comas en una sola consulta.
+PubChem pide no pasar de 5 consultas por segundo y quien lo supera puede quedar bloqueado un rato. Guarde los resultados en un CSV para no repetir las mismas consultas en cada sesión. Si necesita datos de muchos compuestos, pida varios a la vez separando los CID con comas en una sola consulta.
 
 ## Errores comunes
 

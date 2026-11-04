@@ -18,7 +18,7 @@ Un SMILES dice qué átomos están unidos, pero no dónde está cada uno en el e
 
 ### De 2D a 3D con ETKDG
 
-RDKit genera la primera geometría con el método ETKDG. Primero estima qué distancias son posibles entre cada par de átomos, a partir de longitudes de enlace y ángulos, y busca coordenadas que las respeten. Después prefiere los ángulos de torsión que aparecen más a menudo en estructuras cristalinas reales.
+RDKit genera la primera geometría con el método ETKDG. Primero estima qué distancias son posibles entre cada par de átomos, a partir de longitudes de enlace y ángulos y busca coordenadas que las respeten. Después prefiere los ángulos de torsión que aparecen más a menudo en estructuras cristalinas reales.
 
 El resultado es una geometría razonable pero sin optimizar. Por eso después se ajusta con un campo de fuerza.
 
@@ -52,7 +52,7 @@ $$
 
 A 298 K, $RT \approx 0.593\ \text{kcal/mol}$.
 
-Tomemos el butano. El conformero *gauche* está unos 0.8 kcal/mol por encima del *anti*, y hay dos *gauche* (uno a cada lado). Cada *gauche* pesa entonces $e^{-0.8/0.593} \approx 0.26$ frente a 1 del *anti*:
+Tomemos el butano. El conformero *gauche* está unos 0.8 kcal/mol por encima del *anti* y hay dos *gauche* (uno a cada lado). Cada *gauche* pesa entonces $e^{-0.8/0.593} \approx 0.26$ frente a 1 del *anti*:
 
 $$
 p_{\text{anti}} = \frac{1}{1 + 2(0.26)} \approx 0.66

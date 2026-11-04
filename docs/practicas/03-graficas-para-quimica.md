@@ -14,7 +14,7 @@ El código de esta práctica está en Colab. Esta página explica la teoría que
 
 ### Por qué un arreglo y no una lista
 
-Una lista de Python es un contenedor general: puede guardar números, textos y otras listas a la vez, y por eso no sabe sumar. Un arreglo de `numpy` guarda un solo tipo de dato en memoria contigua, y eso permite aplicar una operación a todos los elementos de una vez, sin escribir un bucle. Se llama **vectorización**.
+Una lista de Python es un contenedor general: puede guardar números, textos y otras listas a la vez y por eso no sabe sumar. Un arreglo de `numpy` guarda un solo tipo de dato en memoria contigua y eso permite aplicar una operación a todos los elementos de una vez, sin escribir un bucle. Se llama **vectorización**.
 
 | Operación | Lista | Arreglo |
 |---|---|---|

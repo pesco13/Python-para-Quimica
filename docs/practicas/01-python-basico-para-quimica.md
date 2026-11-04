@@ -24,7 +24,7 @@ con $R = 0.082057\ \mathrm{L\,atm\,mol^{-1}\,K^{-1}}$, la presión va en atm, el
 
 ### Los decimales no son exactos
 
-La computadora guarda los `float` en binario, y muchos decimales no tienen una representación exacta. Si escribe `0.1 + 0.2` en Colab, el resultado es `0.30000000000000004`.
+La computadora guarda los `float` en binario y muchos decimales no tienen una representación exacta. Si escribe `0.1 + 0.2` en Colab, el resultado es `0.30000000000000004`.
 
 En la práctica, esto tiene dos consecuencias. Al mostrar resultados, redondee: `f"{valor:.3f}"` da 3 decimales y `f"{valor:.2e}"` da notación científica, útil para constantes como $K_a$. Al comparar decimales, no use `==`. En lugar de `pH == 7`, use una tolerancia: `abs(pH - 7) < 0.01`.
 
@@ -75,7 +75,7 @@ Se escribió `x = 2,5` con coma decimal y Python lo leyó como dos números. Use
 
 ### `clasificar_pH(7.0000001)` dice «básica»
 
-La comparación `pH == 7` es exacta, y un valor medido nunca es exactamente 7. Compare con tolerancia, como se explica en *Los decimales no son exactos*.
+La comparación `pH == 7` es exacta y un valor medido nunca es exactamente 7. Compare con tolerancia, como se explica en *Los decimales no son exactos*.
 
 ## Retos adicionales
 

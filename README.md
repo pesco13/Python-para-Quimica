@@ -23,7 +23,7 @@ Todo funciona en **Google Colab**: solo se necesita un navegador y una cuenta de
 | 10 | [Primer cálculo cuántico con PySCF](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/10_Primer_calculo_cuantico_PySCF.ipynb) |
 | 11 | [Informe reproducible](https://colab.research.google.com/github/pesco13/Python-para-Quimica/blob/main/notebooks/11_Informe_reproducible.ipynb) |
 
-Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*), y con celdas de autocomprobación (`assert`) que avisan si algo quedó mal.
+Cada notebook termina con ejercicios y soluciones plegables (*Ver solución*) y con celdas de autocomprobación (`assert`) que avisan si algo quedó mal.
 
 ## Organización sugerida
 
@@ -64,7 +64,7 @@ El informe distingue fallos (✗), que hay que corregir, de avisos (!), que conv
 | `datos/pubchem_respaldo.csv` | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
 | `datos/generar_datos.py` | Genera series sintéticas de calibración y de cinética a partir de una semilla |
 
-El mismo número de semilla da siempre los mismos valores, y números distintos dan series distintas con el mismo comportamiento físico.
+El mismo número de semilla da siempre los mismos valores y números distintos dan series distintas con el mismo comportamiento físico.
 
 ```python
 !wget -q -O generar_datos.py https://raw.githubusercontent.com/pesco13/Python-para-Quimica/main/datos/generar_datos.py
@@ -88,7 +88,7 @@ Si usa este material, cítelo según `CITATION.cff`.
 
 ## Créditos y referencias
 
-La estructura de los temas se inspira en el curso de quimioinformática del grupo DIFACQUIM (UNAM), disponible bajo licencia MIT en https://github.com/DIFACQUIM/Cursos, y en TeachOpenCADD (https://github.com/volkamerlab/teachopencadd).
+La estructura de los temas se inspira en el curso de quimioinformática del grupo DIFACQUIM (UNAM), disponible bajo licencia MIT en https://github.com/DIFACQUIM/Cursos y en TeachOpenCADD (https://github.com/volkamerlab/teachopencadd).
 
 * RDKit: Open-source cheminformatics. https://www.rdkit.org
 * Kim, S. et al. PubChem (PUG-REST). https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest

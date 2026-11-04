@@ -14,7 +14,7 @@ El código de esta práctica está en Colab. Esta página explica la teoría que
 
 ### Cómo llegan los datos a su notebook
 
-El archivo `generar_datos.py` **no contiene los datos**: contiene la receta que los construye a partir de un número que actúa de semilla. Por eso ocupa 8 kB en vez de treinta tablas, y por eso la misma semilla da siempre los mismos valores.
+El archivo `generar_datos.py` **no contiene los datos**: contiene la receta que los construye a partir de un número que actúa de semilla. Por eso ocupa 8 kB en vez de treinta tablas y por eso la misma semilla da siempre los mismos valores.
 
 Hay tres formas de llegar a ellos, según lo que quiera hacer.
 
@@ -23,7 +23,7 @@ Hay tres formas de llegar a ellos, según lo que quiera hacer.
 ```python
 from generar_datos import calibracion, cinetica, mi_familia
 
-patrones, problema = calibracion(7)   # 18 filas × 2 columnas, y 3 × 2
+patrones, problema = calibracion(7)   # 18 filas × 2 columnas; 3 × 2
 serie = cinetica(7)                   # 48 × 3
 tabla = mi_familia(7)                 # 6 × 4
 ```
@@ -54,7 +54,7 @@ Antes de calcular nada conviene responder cuatro preguntas. Son una línea cada 
 | ¿Cuántos datos hay? | `df.shape` | Devuelve (filas, columnas) |
 | ¿Cómo se llaman las columnas? | `df.columns.tolist()` | Los nombres exactos, con sus mayúsculas |
 | ¿De qué tipo es cada una? | `df.dtypes` | `float64` o `int64` son números; `object` es texto |
-| ¿Qué valores toman? | `df.head()` y `df.describe()` | Las primeras filas, y cuenta, media, desviación, mínimo, máximo y cuartiles |
+| ¿Qué valores toman? | `df.head()` y `df.describe()` | Las primeras filas; y cuenta, media, desviación, mínimo, máximo y cuartiles |
 
 La tercera es la que más errores evita. Una columna de números que aparece como `object` llegó como texto —por una coma decimal, un espacio o un guion— y cualquier promedio sobre ella fallará o, peor, concatenará cadenas en vez de sumar. `pd.to_numeric(df["columna"], errors="coerce")` la convierte y deja como vacíos los valores que no pueda interpretar.
 
@@ -134,7 +134,7 @@ Con 18 medidas y 16 grados de libertad el valor correcto está cerca de 2,12, un
 ## Retos adicionales
 
 1. Simule una calibración con ruido proporcional a la señal y ajústela de dos formas, con mínimos cuadrados normales y ponderados. ¿Cambia la concentración calculada de una muestra diluida?
-2. Calcule el intervalo de confianza de la **recta** completa, no solo de un punto, y dibújelo como una banda alrededor del ajuste.
+2. Calcule el intervalo de confianza de la **recta** completa, no solo de un punto y dibújelo como una banda alrededor del ajuste.
 3. Tome su calibración y quite un punto cada vez, rehaciendo el ajuste. ¿Hay algún punto que cambie el resultado mucho más que los demás?
 4. Busque en la literatura el criterio del LOD basado en la regresión de la IUPAC y compárelo con el de 3s/m.
 

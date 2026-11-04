@@ -20,7 +20,7 @@ La idea tiene excepciones. A veces un cambio pequeño, de un solo átomo, cambia
 
 ### Cómo se construye una huella de Morgan
 
-Una huella de Morgan (también llamada ECFP) describe el entorno de cada átomo en varios pasos. Primero, a cada átomo se le asigna un código según su elemento, sus enlaces y sus vecinos (radio 0). Luego el código de cada átomo se combina con los de sus vecinos directos (radio 1), y después con los vecinos de los vecinos (radio 2). Con `radius=2`, cada fragmento llega hasta dos enlaces desde el átomo central.
+Una huella de Morgan (también llamada ECFP) describe el entorno de cada átomo en varios pasos. Primero, a cada átomo se le asigna un código según su elemento, sus enlaces y sus vecinos (radio 0). Luego el código de cada átomo se combina con los de sus vecinos directos (radio 1) y después con los vecinos de los vecinos (radio 2). Con `radius=2`, cada fragmento llega hasta dos enlaces desde el átomo central.
 
 Al final, cada fragmento distinto se convierte en un número y se acomoda en un vector de `fpSize` bits (2048 en el notebook), donde el bit correspondiente se pone en 1. Como hay más fragmentos posibles que bits, a veces dos fragmentos distintos encienden el mismo bit. Con 2048 bits y moléculas pequeñas, esas coincidencias pesan poco.
 
@@ -34,7 +34,7 @@ $$
 
 Por ejemplo, si A tiene 10 bits, B tiene 12 y comparten 8, entonces $T = 8 / (10 + 12 - 8) = 8/14 \approx 0.57$.
 
-Un valor de 1 indica huellas idénticas, que casi siempre corresponden a la misma molécula, y uno de 0 indica que no comparten ningún fragmento. No hay un umbral universal a partir del cual dos moléculas sean «parecidas», porque depende del tipo de huella y del radio. Compare solo valores calculados con el mismo método.
+Un valor de 1 indica huellas idénticas, que casi siempre corresponden a la misma molécula y uno de 0 indica que no comparten ningún fragmento. No hay un umbral universal a partir del cual dos moléculas sean «parecidas», porque depende del tipo de huella y del radio. Compare solo valores calculados con el mismo método.
 
 ### PCA: un mapa del espacio químico
 
@@ -42,7 +42,7 @@ En el notebook cada compuesto se describe con 6 descriptores, así que es un pun
 
 Antes del PCA hay que estandarizar. MolWt va de 18 a 300 y HBD de 0 a 5; sin `StandardScaler`, la masa dominaría el mapa solo por tener números más grandes.
 
-`pca.explained_variance_ratio_` dice qué fracción de la información conserva cada eje. Si PC1 y PC2 suman 0.85, el mapa muestra el 85 % de la variación. Por su parte, `pca.components_` da las cargas, es decir, cuánto pesa cada descriptor en cada eje, y sirve para interpretar qué significa estar a la derecha o arriba en el mapa.
+`pca.explained_variance_ratio_` dice qué fracción de la información conserva cada eje. Si PC1 y PC2 suman 0.85, el mapa muestra el 85 % de la variación. Por su parte, `pca.components_` da las cargas, es decir, cuánto pesa cada descriptor en cada eje y sirve para interpretar qué significa estar a la derecha o arriba en el mapa.
 
 Tenga presente que dos puntos cercanos en el mapa pueden estar lejos en las dimensiones que el mapa no muestra.
 

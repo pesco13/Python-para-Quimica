@@ -56,7 +56,7 @@ Cada notebook termina con ejercicios resueltos y con celdas de autocomprobación
 | [`pubchem_respaldo.csv`](https://pesco13.github.io/Python-para-Quimica/datos/pubchem_respaldo.csv) | Propiedades de esos 150 compuestos ya descargadas de PubChem, para trabajar sin conexión |
 | [`generar_datos.py`](https://pesco13.github.io/Python-para-Quimica/datos/generar_datos.py) | Genera series sintéticas de calibración y de cinética a partir de una semilla |
 
-`generar_datos.py` produce conjuntos de datos sintéticos de calibración y de cinética a partir de un número entero que actúa de semilla: el mismo número da siempre los mismos valores, y números distintos dan series distintas con el mismo comportamiento físico. Sirve para practicar un ajuste sin depender de haber medido antes en el laboratorio.
+`generar_datos.py` produce conjuntos de datos sintéticos de calibración y de cinética a partir de un número entero que actúa de semilla: el mismo número da siempre los mismos valores y números distintos dan series distintas con el mismo comportamiento físico. Sirve para practicar un ajuste sin depender de haber medido antes en el laboratorio.
 
 Todos los SMILES se validaron con RDKit.
 
@@ -70,7 +70,7 @@ Si usa este material, cítelo según [`CITATION.cff`](https://github.com/pesco13
 
 ## Créditos y referencias
 
-La estructura de los temas se inspira en el curso de quimioinformática del grupo DIFACQUIM (UNAM), disponible bajo licencia MIT en [github.com/DIFACQUIM/Cursos](https://github.com/DIFACQUIM/Cursos), y en [TeachOpenCADD](https://github.com/volkamerlab/teachopencadd).
+La estructura de los temas se inspira en el curso de quimioinformática del grupo DIFACQUIM (UNAM), disponible bajo licencia MIT en [github.com/DIFACQUIM/Cursos](https://github.com/DIFACQUIM/Cursos) y en [TeachOpenCADD](https://github.com/volkamerlab/teachopencadd).
 
 - RDKit: Open-source cheminformatics. [https://www.rdkit.org](https://www.rdkit.org)
 - Kim, S. et al. PubChem (PUG-REST). [https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest](https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest)

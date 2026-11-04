@@ -26,19 +26,19 @@ Integrando se obtienen tres expresiones distintas:
 | 1 | $[A] = [A]_0 e^{-kt}$ | $\ln[A]$ vs $t$ | s⁻¹ | $\ln 2/k$ |
 | 2 | $1/[A] = 1/[A]_0 + kt$ | $1/[A]$ vs $t$ | L mol⁻¹ s⁻¹ | $1/(k[A]_0)$ |
 
-Dos detalles que distinguen a quien entendió de quien copió el procedimiento: en primer orden la vida media **no depende** de la concentración inicial, y las unidades de $k$ son distintas en cada orden. Si reporta una constante de primer orden en L mol⁻¹ s⁻¹, algo no cuadra.
+Dos detalles que distinguen a quien entendió de quien copió el procedimiento: en primer orden la vida media **no depende** de la concentración inicial y las unidades de $k$ son distintas en cada orden. Si reporta una constante de primer orden en L mol⁻¹ s⁻¹, algo no cuadra.
 
 ### Por qué linealizar distorsiona
 
 El método clásico transforma los datos para que queden en línea recta. Es cómodo pero tiene un costo: la transformación cambia el tamaño relativo de los errores.
 
-Si el ruido del instrumento es aproximadamente constante en $[A]$, al calcular $1/[A]$ los puntos de concentración baja, que son los más ruidosos en términos relativos, se amplifican y pasan a dominar el ajuste. El resultado es una $k$ sesgada, y una incertidumbre que no significa lo que parece.
+Si el ruido del instrumento es aproximadamente constante en $[A]$, al calcular $1/[A]$ los puntos de concentración baja, que son los más ruidosos en términos relativos, se amplifican y pasan a dominar el ajuste. El resultado es una $k$ sesgada y una incertidumbre que no significa lo que parece.
 
 El ajuste **no lineal** evita el problema porque minimiza los residuales sobre los datos tal como se midieron. Es lo que hace `scipy.optimize.curve_fit`.
 
 ### Cómo funciona `curve_fit`
 
-Recibe una función modelo, los datos y una estimación inicial de los parámetros, y busca los valores que minimizan la suma de cuadrados. Devuelve dos cosas:
+Recibe una función modelo, los datos y una estimación inicial de los parámetros y busca los valores que minimizan la suma de cuadrados. Devuelve dos cosas:
 
 - `parametros`: los valores ajustados.
 - `covarianza`: una matriz cuya diagonal contiene las varianzas. Su raíz cuadrada es la incertidumbre de cada parámetro.
@@ -49,7 +49,7 @@ La estimación inicial importa. Una regla que casi siempre funciona: para la con
 
 Cuando los modelos tienen el mismo número de parámetros, basta comparar la suma de cuadrados residual: gana el menor. Cuando no, hay que penalizar la complejidad con un criterio como el AIC, porque un modelo con más parámetros siempre ajusta mejor.
 
-Y hay un tercer caso, el más honesto de todos: que dos modelos den sumas parecidas. Entonces los datos **no permiten distinguirlos**, y eso es lo que hay que escribir en el informe, en vez de elegir el que da el resultado esperado.
+Y hay un tercer caso, el más honesto de todos: que dos modelos den sumas parecidas. Entonces los datos **no permiten distinguirlos** y eso es lo que hay que escribir en el informe, en vez de elegir el que da el resultado esperado.
 
 ### La ecuación de Arrhenius
 
@@ -63,7 +63,7 @@ La pendiente de $\ln k$ frente a $1/T$ vale $-E_a/R$. Con $R$ en kJ mol⁻¹ K�
 | 40 a 120 kJ/mol | Intervalo típico en disolución |
 | más de 200 kJ/mol | Ruptura de un enlace fuerte en el paso determinante |
 
-La extrapolación fuera del intervalo medido solo es válida si el mecanismo no cambia, y eso no se puede comprobar con los datos del ajuste.
+La extrapolación fuera del intervalo medido solo es válida si el mecanismo no cambia y eso no se puede comprobar con los datos del ajuste.
 
 ## Errores comunes
 
